@@ -2,12 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://416426.github.io</id>
     <title>狐白de博客</title>
-    <updated>2021-09-13T02:25:01.848Z</updated>
+    <updated>2021-09-13T02:26:15.207Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://416426.github.io"/>
     <link rel="self" href="https://416426.github.io/atom.xml"/>
-    <subtitle>
-&lt;script language=javascript&gt;
+    <subtitle>&lt;script language=javascript&gt;
 function siteTime(){
 window.setTimeout(&quot;siteTime()&quot;, 1000);
 var seconds = 1000
