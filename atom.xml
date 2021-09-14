@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://416426.github.io</id>
     <title>💤狐白</title>
-    <updated>2021-09-14T09:46:53.816Z</updated>
+    <updated>2021-09-14T09:52:50.081Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://416426.github.io"/>
     <link rel="self" href="https://416426.github.io/atom.xml"/>
@@ -94,8 +94,7 @@ import seaborn as sns
 </code></pre>
 <pre><code class="language-python">import os
 </code></pre>
-<h2 id="驱虫市场潜力分析">驱虫市场潜力分析</h2>
-<h3 id="导入所有数据">导入所有数据</h3>
+<h3 id="31导入所有数据">3.1导入所有数据</h3>
 <pre><code class="language-python">categroy_df = pd.DataFrame()
 wormer_path = './data/驱虫剂市场/'
 for file in os.listdir(wormer_path):
@@ -495,7 +494,7 @@ for file in os.listdir(wormer_path):
     </tr>
   </tbody>
 </table>
-<h3 id="总体增长情况">总体增长情况</h3>
+<h4 id="311总体增长情况">3.1.1总体增长情况</h4>
 <pre><code class="language-python"># 时间类型做index，可以使用resample做重采样
 # 重采样就是根据时间分组聚合，可以指定按月M、年Y、日D..
 categroy_df.sum(axis=1).resample('Y').sum()
@@ -507,7 +506,7 @@ categroy_df.sum(axis=1).resample('Y').sum()
 2018-12-31    1.612226e+09
 Freq: A-DEC, dtype: float64
 </code></pre>
-<h3 id="月度gmv分析">月度GMV分析</h3>
+<h4 id="312月度gmv分析">3.1.2月度GMV分析</h4>
 <p>每年每月销售额的条形图</p>
 <pre><code class="language-python">gmv = pd.DataFrame(categroy_df.sum(axis=1))
 gmv.columns = ['GMV']
@@ -534,7 +533,7 @@ plt.rcParams['axes.unicode_minus'] = False
 <figure data-type="image" tabindex="4"><img src="https://416426.github.io/post-images/1631612454761.png" alt="" loading="lazy"></figure>
 <figure data-type="image" tabindex="5"><img src="https://416426.github.io/post-images/1631612465753.png" alt="" loading="lazy"></figure>
 <figure data-type="image" tabindex="6"><img src="https://416426.github.io/post-images/1631612474635.png" alt="" loading="lazy"></figure>
-<h3 id="连续三年的销售额变化">连续三年的销售额变化</h3>
+<h4 id="313连续三年的销售额变化">3.1.3连续三年的销售额变化</h4>
 <pre><code class="language-python">两种方式
 1.  从第一年的11月到第二年的10月份
 2.  补全18年的数据   预测  -  - 同期均值
@@ -735,7 +734,7 @@ plt.ylabel('销售额（GMV）')
 </code></pre>
 <pre><code>array([9.17966080e+08, 1.39587273e+09, 1.74288594e+09])
 </code></pre>
-<h2 id="每年各品类销售额占比分析">每年各品类销售额占比分析</h2>
+<h3 id="32每年各品类销售额占比分析">3.2每年各品类销售额占比分析</h3>
 <pre><code class="language-python">#月份暂时没有用，删除
 
 category_total.drop(labels=['month'], inplace=True, axis=1)
@@ -753,7 +752,7 @@ category_year.plot()
 <p>​  <img src="https://416426.github.io/post-images/1631612549920.png" alt="" loading="lazy"><br>
 ​</p>
 <p>由上图可以看出，灭鼠杀虫剂和蚊香液是核心市场</p>
-<h3 id="各市场占比">各市场占比</h3>
+<h4 id="321各市场占比">3.2.1各市场占比</h4>
 <pre><code class="language-python">category_year
 </code></pre>
 <table border="1" class="dataframe">
@@ -819,7 +818,7 @@ for year in ['2016','2017','2018']:
 <p>​<br>
 <img src="https://416426.github.io/post-images/1631612578382.png" alt="" loading="lazy"><br>
 ​</p>
-<h4 id="使用堆叠柱状图不但可以表达占比-还能表示出每年的销售总额">使用堆叠柱状图，不但可以表达占比， 还能表示出每年的销售总额</h4>
+<h5 id="使用堆叠柱状图不但可以表达占比-还能表示出每年的销售总额">使用堆叠柱状图，不但可以表达占比， 还能表示出每年的销售总额</h5>
 <pre><code class="language-python">#测试数据
 data1 = np.array([1,2,3,4])
 data2 = np.array([4,3,2,1])
@@ -880,7 +879,7 @@ Freq: A-DEC, dtype: float64
 2018-12-31    5.616902e+08
 Freq: A-DEC, Name: 灭鼠杀虫剂, dtype: float64
 </code></pre>
-<h3 id="计算三年的增长率">计算三年的增长率</h3>
+<h4 id="322计算三年的增长率">3.2.2计算三年的增长率</h4>
 <pre><code class="language-python">category_year.index = category_year.index.year
 </code></pre>
 <pre><code class="language-python">category_incraserate = category_year.T

@@ -91,7 +91,7 @@
                         <input id="switch_default" type="checkbox" class="switch_default">
                         <label for="switch_default" class="toggleBtn"></label>
             </div>
-            <form id="gridea-search-form" data-update="1631612795239" action="/search/index.html">
+            <form id="gridea-search-form" data-update="1631613138312" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
             </form>
         </div>
@@ -110,7 +110,7 @@
                         <!--zh-->
                         <a id="mobile-toggle-theme-zh" class="a zh">&nbsp;&#x6697;&#x9ED1;</a>
                     </div>
-                    <form id="gridea-search-form" data-update="1631612795239" action="/search/index.html">
+                    <form id="gridea-search-form" data-update="1631613138312" action="/search/index.html">
                         <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
                     </form>
                     <!--en-->
@@ -228,9 +228,9 @@
                                         </a>
                                         <span class="post-time">&#x65E5;&#x671F;: <a href="#">2021-09-14</a></span>
                                         <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
-                                    href="#">17.0
+                                    href="#">17.1
                                     &#x5206;&#x949F;</a></span>
-                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">3589</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">3599</a></span>
                                         
                                             <span class="post-category">&#x5206;&#x7C7B;:
                                 
@@ -325,8 +325,7 @@ import seaborn as sns
 </code></pre>
 <pre><code class="language-python">import os
 </code></pre>
-<h2 id="驱虫市场潜力分析">驱虫市场潜力分析</h2>
-<h3 id="导入所有数据">导入所有数据</h3>
+<h3 id="31导入所有数据">3.1导入所有数据</h3>
 <pre><code class="language-python">categroy_df = pd.DataFrame()
 wormer_path = './data/驱虫剂市场/'
 for file in os.listdir(wormer_path):
@@ -726,7 +725,7 @@ for file in os.listdir(wormer_path):
     </tr>
   </tbody>
 </table>
-<h3 id="总体增长情况">总体增长情况</h3>
+<h4 id="311总体增长情况">3.1.1总体增长情况</h4>
 <pre><code class="language-python"># 时间类型做index，可以使用resample做重采样
 # 重采样就是根据时间分组聚合，可以指定按月M、年Y、日D..
 categroy_df.sum(axis=1).resample('Y').sum()
@@ -738,7 +737,7 @@ categroy_df.sum(axis=1).resample('Y').sum()
 2018-12-31    1.612226e+09
 Freq: A-DEC, dtype: float64
 </code></pre>
-<h3 id="月度gmv分析">月度GMV分析</h3>
+<h4 id="312月度gmv分析">3.1.2月度GMV分析</h4>
 <p>每年每月销售额的条形图</p>
 <pre><code class="language-python">gmv = pd.DataFrame(categroy_df.sum(axis=1))
 gmv.columns = ['GMV']
@@ -765,7 +764,7 @@ plt.rcParams['axes.unicode_minus'] = False
 <figure data-type="image" tabindex="4"><img src="https://416426.github.io/post-images/1631612454761.png" alt="" loading="lazy"></figure>
 <figure data-type="image" tabindex="5"><img src="https://416426.github.io/post-images/1631612465753.png" alt="" loading="lazy"></figure>
 <figure data-type="image" tabindex="6"><img src="https://416426.github.io/post-images/1631612474635.png" alt="" loading="lazy"></figure>
-<h3 id="连续三年的销售额变化">连续三年的销售额变化</h3>
+<h4 id="313连续三年的销售额变化">3.1.3连续三年的销售额变化</h4>
 <pre><code class="language-python">两种方式
 1.  从第一年的11月到第二年的10月份
 2.  补全18年的数据   预测  -  - 同期均值
@@ -966,7 +965,7 @@ plt.ylabel('销售额（GMV）')
 </code></pre>
 <pre><code>array([9.17966080e+08, 1.39587273e+09, 1.74288594e+09])
 </code></pre>
-<h2 id="每年各品类销售额占比分析">每年各品类销售额占比分析</h2>
+<h3 id="32每年各品类销售额占比分析">3.2每年各品类销售额占比分析</h3>
 <pre><code class="language-python">#月份暂时没有用，删除
 
 category_total.drop(labels=['month'], inplace=True, axis=1)
@@ -984,7 +983,7 @@ category_year.plot()
 <p>​  <img src="https://416426.github.io/post-images/1631612549920.png" alt="" loading="lazy"><br>
 ​</p>
 <p>由上图可以看出，灭鼠杀虫剂和蚊香液是核心市场</p>
-<h3 id="各市场占比">各市场占比</h3>
+<h4 id="321各市场占比">3.2.1各市场占比</h4>
 <pre><code class="language-python">category_year
 </code></pre>
 <table border="1" class="dataframe">
@@ -1050,7 +1049,7 @@ for year in ['2016','2017','2018']:
 <p>​<br>
 <img src="https://416426.github.io/post-images/1631612578382.png" alt="" loading="lazy"><br>
 ​</p>
-<h4 id="使用堆叠柱状图不但可以表达占比-还能表示出每年的销售总额">使用堆叠柱状图，不但可以表达占比， 还能表示出每年的销售总额</h4>
+<h5 id="使用堆叠柱状图不但可以表达占比-还能表示出每年的销售总额">使用堆叠柱状图，不但可以表达占比， 还能表示出每年的销售总额</h5>
 <pre><code class="language-python">#测试数据
 data1 = np.array([1,2,3,4])
 data2 = np.array([4,3,2,1])
@@ -1111,7 +1110,7 @@ Freq: A-DEC, dtype: float64
 2018-12-31    5.616902e+08
 Freq: A-DEC, Name: 灭鼠杀虫剂, dtype: float64
 </code></pre>
-<h3 id="计算三年的增长率">计算三年的增长率</h3>
+<h4 id="322计算三年的增长率">3.2.2计算三年的增长率</h4>
 <pre><code class="language-python">category_year.index = category_year.index.year
 </code></pre>
 <pre><code class="language-python">category_incraserate = category_year.T
@@ -1160,23 +1159,25 @@ Name: 电蚊香套装, dtype: float64
 </ul>
 </li>
 <li><a href="#2%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF%E5%8F%8A%E4%BA%A7%E5%93%81%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E8%AF%B4%E6%98%8E">2.项目背景及产品架构、数据说明</a></li>
-<li><a href="#3%E9%A9%B1%E8%99%AB%E5%B8%82%E5%9C%BA%E6%BD%9C%E5%8A%9B%E5%88%86%E6%9E%90">3.驱虫市场潜力分析</a></li>
-<li><a href="#%E9%A9%B1%E8%99%AB%E5%B8%82%E5%9C%BA%E6%BD%9C%E5%8A%9B%E5%88%86%E6%9E%90">驱虫市场潜力分析</a>
+<li><a href="#3%E9%A9%B1%E8%99%AB%E5%B8%82%E5%9C%BA%E6%BD%9C%E5%8A%9B%E5%88%86%E6%9E%90">3.驱虫市场潜力分析</a>
 <ul>
-<li><a href="#%E5%AF%BC%E5%85%A5%E6%89%80%E6%9C%89%E6%95%B0%E6%8D%AE">导入所有数据</a></li>
-<li><a href="#%E6%80%BB%E4%BD%93%E5%A2%9E%E9%95%BF%E6%83%85%E5%86%B5">总体增长情况</a></li>
-<li><a href="#%E6%9C%88%E5%BA%A6gmv%E5%88%86%E6%9E%90">月度GMV分析</a></li>
-<li><a href="#%E8%BF%9E%E7%BB%AD%E4%B8%89%E5%B9%B4%E7%9A%84%E9%94%80%E5%94%AE%E9%A2%9D%E5%8F%98%E5%8C%96">连续三年的销售额变化</a></li>
+<li><a href="#31%E5%AF%BC%E5%85%A5%E6%89%80%E6%9C%89%E6%95%B0%E6%8D%AE">3.1导入所有数据</a>
+<ul>
+<li><a href="#311%E6%80%BB%E4%BD%93%E5%A2%9E%E9%95%BF%E6%83%85%E5%86%B5">3.1.1总体增长情况</a></li>
+<li><a href="#312%E6%9C%88%E5%BA%A6gmv%E5%88%86%E6%9E%90">3.1.2月度GMV分析</a></li>
+<li><a href="#313%E8%BF%9E%E7%BB%AD%E4%B8%89%E5%B9%B4%E7%9A%84%E9%94%80%E5%94%AE%E9%A2%9D%E5%8F%98%E5%8C%96">3.1.3连续三年的销售额变化</a></li>
 </ul>
 </li>
-<li><a href="#%E6%AF%8F%E5%B9%B4%E5%90%84%E5%93%81%E7%B1%BB%E9%94%80%E5%94%AE%E9%A2%9D%E5%8D%A0%E6%AF%94%E5%88%86%E6%9E%90">每年各品类销售额占比分析</a>
+<li><a href="#32%E6%AF%8F%E5%B9%B4%E5%90%84%E5%93%81%E7%B1%BB%E9%94%80%E5%94%AE%E9%A2%9D%E5%8D%A0%E6%AF%94%E5%88%86%E6%9E%90">3.2每年各品类销售额占比分析</a>
 <ul>
-<li><a href="#%E5%90%84%E5%B8%82%E5%9C%BA%E5%8D%A0%E6%AF%94">各市场占比</a>
+<li><a href="#321%E5%90%84%E5%B8%82%E5%9C%BA%E5%8D%A0%E6%AF%94">3.2.1各市场占比</a>
 <ul>
 <li><a href="#%E4%BD%BF%E7%94%A8%E5%A0%86%E5%8F%A0%E6%9F%B1%E7%8A%B6%E5%9B%BE%E4%B8%8D%E4%BD%86%E5%8F%AF%E4%BB%A5%E8%A1%A8%E8%BE%BE%E5%8D%A0%E6%AF%94-%E8%BF%98%E8%83%BD%E8%A1%A8%E7%A4%BA%E5%87%BA%E6%AF%8F%E5%B9%B4%E7%9A%84%E9%94%80%E5%94%AE%E6%80%BB%E9%A2%9D">使用堆叠柱状图，不但可以表达占比， 还能表示出每年的销售总额</a></li>
 </ul>
 </li>
-<li><a href="#%E8%AE%A1%E7%AE%97%E4%B8%89%E5%B9%B4%E7%9A%84%E5%A2%9E%E9%95%BF%E7%8E%87">计算三年的增长率</a></li>
+<li><a href="#322%E8%AE%A1%E7%AE%97%E4%B8%89%E5%B9%B4%E7%9A%84%E5%A2%9E%E9%95%BF%E7%8E%87">3.2.2计算三年的增长率</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1192,8 +1193,8 @@ Name: 电蚊香套装, dtype: float64
                         <i class="post-share"></i>
                         <span>&#x5206;&#x4EAB;:</span>
                                                                     <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://416426.github.io/qu-chong-shi-chang-dian-shang-fen-xi-an-li/"><i class="fa fa-qrcode"></i></a>
-                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://416426.github.io/qu-chong-shi-chang-dian-shang-fen-xi-an-li/&sharesource=qzone&title=驱虫市场电商分析案例👻&pics=https://416426.github.io/images/avatar.png?v=1631612795239&summary="><i class="fa fa-qq"></i></a>
-                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://416426.github.io/qu-chong-shi-chang-dian-shang-fen-xi-an-li/&sharesource=weibo&title=驱虫市场电商分析案例👻 + " - " + &pic="https://416426.github.io/images/avatar.png?v=1631612795239 "><i class="fa fa-weibo "></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://416426.github.io/qu-chong-shi-chang-dian-shang-fen-xi-an-li/&sharesource=qzone&title=驱虫市场电商分析案例👻&pics=https://416426.github.io/images/avatar.png?v=1631613138312&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://416426.github.io/qu-chong-shi-chang-dian-shang-fen-xi-an-li/&sharesource=weibo&title=驱虫市场电商分析案例👻 + " - " + &pic="https://416426.github.io/images/avatar.png?v=1631613138312 "><i class="fa fa-weibo "></i></a>
 
                                                                     </span>
                                                                     
@@ -1341,7 +1342,7 @@ siteTime()
                     CheckVersion();
                     
                     var newDate = new Date();
-                    newDate.setTime(1631612795239);
+                    newDate.setTime(1631613138312);
                     console.log(" Blog Update Time: " + newDate.toLocaleDateString());
                     console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
                 </script>
