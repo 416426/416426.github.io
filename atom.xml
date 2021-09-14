@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://416426.github.io</id>
     <title>💤狐白</title>
-    <updated>2021-09-14T07:07:27.335Z</updated>
+    <updated>2021-09-14T09:44:55.322Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://416426.github.io"/>
     <link rel="self" href="https://416426.github.io/atom.xml"/>
@@ -92,6 +92,831 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 %matplotlib inline 
 </code></pre>
+<pre><code class="language-python">import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+%matplotlib inline
+</code></pre>
+<pre><code class="language-python">import os
+</code></pre>
+<h2 id="驱虫市场潜力分析">驱虫市场潜力分析</h2>
+<h3 id="导入所有数据">导入所有数据</h3>
+<pre><code class="language-python">categroy_df = pd.DataFrame()
+wormer_path = './data/驱虫剂市场/'
+for file in os.listdir(wormer_path):
+    if '三年交易额' in file:
+        file_path = os.path.join(wormer_path, file)
+        df = pd.read_excel(file_path)
+        df.set_index('时间', inplace=True)
+        name = file.split('市场')[0]
+        df.columns = [name]
+        categroy_df = pd.concat((categroy_df, df), axis=1)
+</code></pre>
+<pre><code class="language-python">categroy_df
+</code></pre>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>灭鼠杀虫剂</th>
+      <th>电蚊香套装</th>
+      <th>盘香灭蟑香蚊香盘</th>
+      <th>蚊香加热器</th>
+      <th>蚊香液</th>
+      <th>蚊香片</th>
+      <th>防霉防蛀片</th>
+    </tr>
+    <tr>
+      <th>时间</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2018-10-01</th>
+      <td>1.136548e+08</td>
+      <td>106531.29</td>
+      <td>4171283.35</td>
+      <td>315639.48</td>
+      <td>7.814546e+06</td>
+      <td>1032414.29</td>
+      <td>8541153.59</td>
+    </tr>
+    <tr>
+      <th>2018-09-01</th>
+      <td>1.440261e+08</td>
+      <td>105666.63</td>
+      <td>6784500.17</td>
+      <td>457366.41</td>
+      <td>1.065497e+07</td>
+      <td>1566651.88</td>
+      <td>8825870.43</td>
+    </tr>
+    <tr>
+      <th>2018-08-01</th>
+      <td>1.540426e+08</td>
+      <td>201467.03</td>
+      <td>10709683.41</td>
+      <td>746513.13</td>
+      <td>1.783558e+07</td>
+      <td>2617149.00</td>
+      <td>6320153.44</td>
+    </tr>
+    <tr>
+      <th>2018-07-01</th>
+      <td>1.480032e+08</td>
+      <td>438635.29</td>
+      <td>16589184.89</td>
+      <td>1871757.00</td>
+      <td>3.887792e+07</td>
+      <td>6209040.06</td>
+      <td>6302595.06</td>
+    </tr>
+    <tr>
+      <th>2018-06-01</th>
+      <td>1.359438e+08</td>
+      <td>953749.78</td>
+      <td>23526385.73</td>
+      <td>3641025.92</td>
+      <td>7.649909e+07</td>
+      <td>12484919.63</td>
+      <td>7047206.98</td>
+    </tr>
+    <tr>
+      <th>2018-05-01</th>
+      <td>1.241642e+08</td>
+      <td>1238967.37</td>
+      <td>28118581.25</td>
+      <td>5032466.78</td>
+      <td>1.050396e+08</td>
+      <td>15309721.94</td>
+      <td>7942340.44</td>
+    </tr>
+    <tr>
+      <th>2018-04-01</th>
+      <td>7.509661e+07</td>
+      <td>841051.93</td>
+      <td>16420341.87</td>
+      <td>3130513.43</td>
+      <td>6.254165e+07</td>
+      <td>7954875.07</td>
+      <td>7031364.60</td>
+    </tr>
+    <tr>
+      <th>2018-03-01</th>
+      <td>5.918182e+07</td>
+      <td>475177.48</td>
+      <td>7900094.91</td>
+      <td>1198332.81</td>
+      <td>2.632447e+07</td>
+      <td>2950648.32</td>
+      <td>6051561.02</td>
+    </tr>
+    <tr>
+      <th>2018-02-01</th>
+      <td>2.292138e+07</td>
+      <td>33232.95</td>
+      <td>545917.66</td>
+      <td>75714.46</td>
+      <td>2.235774e+06</td>
+      <td>218915.63</td>
+      <td>1393948.47</td>
+    </tr>
+    <tr>
+      <th>2018-01-01</th>
+      <td>3.653873e+07</td>
+      <td>54305.20</td>
+      <td>592663.20</td>
+      <td>86670.45</td>
+      <td>1.759451e+06</td>
+      <td>298146.11</td>
+      <td>2607776.07</td>
+    </tr>
+    <tr>
+      <th>2017-12-01</th>
+      <td>4.292283e+07</td>
+      <td>71600.17</td>
+      <td>796930.46</td>
+      <td>69145.59</td>
+      <td>2.213103e+06</td>
+      <td>314120.38</td>
+      <td>3259747.23</td>
+    </tr>
+    <tr>
+      <th>2017-11-01</th>
+      <td>5.838217e+07</td>
+      <td>94993.76</td>
+      <td>1581530.20</td>
+      <td>168141.79</td>
+      <td>4.257594e+06</td>
+      <td>617094.94</td>
+      <td>5447184.43</td>
+    </tr>
+    <tr>
+      <th>2017-10-01</th>
+      <td>8.226882e+07</td>
+      <td>145925.31</td>
+      <td>2824785.80</td>
+      <td>166522.62</td>
+      <td>4.290843e+06</td>
+      <td>766588.77</td>
+      <td>6152868.25</td>
+    </tr>
+    <tr>
+      <th>2017-09-01</th>
+      <td>1.010081e+08</td>
+      <td>242194.37</td>
+      <td>5581352.42</td>
+      <td>353042.45</td>
+      <td>7.833349e+06</td>
+      <td>1574779.65</td>
+      <td>5792065.80</td>
+    </tr>
+    <tr>
+      <th>2017-08-01</th>
+      <td>1.049504e+08</td>
+      <td>332922.02</td>
+      <td>7229409.84</td>
+      <td>544076.63</td>
+      <td>1.376039e+07</td>
+      <td>2323304.14</td>
+      <td>5081714.64</td>
+    </tr>
+    <tr>
+      <th>2017-07-01</th>
+      <td>1.116729e+08</td>
+      <td>913425.95</td>
+      <td>13718046.88</td>
+      <td>1357778.93</td>
+      <td>4.257757e+07</td>
+      <td>6627299.71</td>
+      <td>6691694.17</td>
+    </tr>
+    <tr>
+      <th>2017-06-01</th>
+      <td>1.051463e+08</td>
+      <td>2045163.59</td>
+      <td>19635925.59</td>
+      <td>2639777.66</td>
+      <td>8.283230e+07</td>
+      <td>12422420.21</td>
+      <td>7155138.87</td>
+    </tr>
+    <tr>
+      <th>2017-05-01</th>
+      <td>9.185035e+07</td>
+      <td>3606141.82</td>
+      <td>20275515.85</td>
+      <td>3185961.75</td>
+      <td>1.014605e+08</td>
+      <td>15961946.71</td>
+      <td>8145781.12</td>
+    </tr>
+    <tr>
+      <th>2017-04-01</th>
+      <td>5.363586e+07</td>
+      <td>1285599.49</td>
+      <td>9197868.29</td>
+      <td>1554864.42</td>
+      <td>4.880687e+07</td>
+      <td>6214963.68</td>
+      <td>6682161.49</td>
+    </tr>
+    <tr>
+      <th>2017-03-01</th>
+      <td>4.078967e+07</td>
+      <td>390486.57</td>
+      <td>3397837.60</td>
+      <td>317206.48</td>
+      <td>1.488979e+07</td>
+      <td>1319399.22</td>
+      <td>3904656.82</td>
+    </tr>
+    <tr>
+      <th>2017-02-01</th>
+      <td>3.467502e+07</td>
+      <td>209643.87</td>
+      <td>1519446.34</td>
+      <td>148158.07</td>
+      <td>5.929509e+06</td>
+      <td>687697.46</td>
+      <td>2584035.90</td>
+    </tr>
+    <tr>
+      <th>2017-01-01</th>
+      <td>2.047156e+07</td>
+      <td>39434.76</td>
+      <td>596744.04</td>
+      <td>48164.63</td>
+      <td>1.213749e+06</td>
+      <td>238973.09</td>
+      <td>1781773.46</td>
+    </tr>
+    <tr>
+      <th>2016-12-01</th>
+      <td>3.546668e+07</td>
+      <td>84350.57</td>
+      <td>1234900.05</td>
+      <td>52118.96</td>
+      <td>1.558634e+06</td>
+      <td>293737.20</td>
+      <td>3504367.98</td>
+    </tr>
+    <tr>
+      <th>2016-11-01</th>
+      <td>4.780625e+07</td>
+      <td>106291.23</td>
+      <td>1473418.20</td>
+      <td>82835.82</td>
+      <td>2.758827e+06</td>
+      <td>512990.23</td>
+      <td>4975519.21</td>
+    </tr>
+    <tr>
+      <th>2016-10-01</th>
+      <td>6.339722e+07</td>
+      <td>179015.23</td>
+      <td>2543813.78</td>
+      <td>130484.07</td>
+      <td>3.641803e+06</td>
+      <td>690912.02</td>
+      <td>4600717.78</td>
+    </tr>
+    <tr>
+      <th>2016-09-01</th>
+      <td>6.864724e+07</td>
+      <td>210456.69</td>
+      <td>3092898.02</td>
+      <td>168724.83</td>
+      <td>4.632818e+06</td>
+      <td>930513.91</td>
+      <td>4642681.07</td>
+    </tr>
+    <tr>
+      <th>2016-08-01</th>
+      <td>7.610885e+07</td>
+      <td>316467.14</td>
+      <td>4389862.79</td>
+      <td>272553.95</td>
+      <td>8.956868e+06</td>
+      <td>1581021.50</td>
+      <td>4151326.68</td>
+    </tr>
+    <tr>
+      <th>2016-07-01</th>
+      <td>7.832954e+07</td>
+      <td>932728.10</td>
+      <td>7384968.66</td>
+      <td>761159.35</td>
+      <td>2.260036e+07</td>
+      <td>4088320.77</td>
+      <td>5412185.06</td>
+    </tr>
+    <tr>
+      <th>2016-06-01</th>
+      <td>7.693264e+07</td>
+      <td>2184985.33</td>
+      <td>10859461.67</td>
+      <td>1728788.53</td>
+      <td>4.640197e+07</td>
+      <td>8004562.69</td>
+      <td>5694825.13</td>
+    </tr>
+    <tr>
+      <th>2016-05-01</th>
+      <td>5.812696e+07</td>
+      <td>2059879.80</td>
+      <td>9912801.93</td>
+      <td>1618361.54</td>
+      <td>4.777690e+07</td>
+      <td>7474421.97</td>
+      <td>5469360.60</td>
+    </tr>
+    <tr>
+      <th>2016-04-01</th>
+      <td>3.762602e+07</td>
+      <td>1034992.53</td>
+      <td>4687913.18</td>
+      <td>758206.81</td>
+      <td>2.432917e+07</td>
+      <td>3435257.35</td>
+      <td>5253619.06</td>
+    </tr>
+    <tr>
+      <th>2016-03-01</th>
+      <td>2.952610e+07</td>
+      <td>352013.31</td>
+      <td>1204574.20</td>
+      <td>246106.75</td>
+      <td>6.656382e+06</td>
+      <td>746709.07</td>
+      <td>3481194.46</td>
+    </tr>
+    <tr>
+      <th>2016-02-01</th>
+      <td>1.500135e+07</td>
+      <td>96979.48</td>
+      <td>449199.41</td>
+      <td>36193.85</td>
+      <td>6.939075e+05</td>
+      <td>109108.05</td>
+      <td>1274810.96</td>
+    </tr>
+    <tr>
+      <th>2016-01-01</th>
+      <td>2.107822e+07</td>
+      <td>108412.71</td>
+      <td>619042.01</td>
+      <td>49670.25</td>
+      <td>4.828890e+05</td>
+      <td>113284.71</td>
+      <td>1562393.95</td>
+    </tr>
+    <tr>
+      <th>2015-12-01</th>
+      <td>2.472756e+07</td>
+      <td>110068.83</td>
+      <td>818479.56</td>
+      <td>34076.91</td>
+      <td>5.832845e+05</td>
+      <td>134890.48</td>
+      <td>2333602.08</td>
+    </tr>
+    <tr>
+      <th>2015-11-01</th>
+      <td>3.303873e+07</td>
+      <td>185094.22</td>
+      <td>1197791.27</td>
+      <td>86889.91</td>
+      <td>1.579796e+06</td>
+      <td>325744.43</td>
+      <td>3364112.14</td>
+    </tr>
+  </tbody>
+</table>
+<h3 id="总体增长情况">总体增长情况</h3>
+<pre><code class="language-python"># 时间类型做index，可以使用resample做重采样
+# 重采样就是根据时间分组聚合，可以指定按月M、年Y、日D..
+categroy_df.sum(axis=1).resample('Y').sum()
+</code></pre>
+<pre><code>时间
+2015-12-31    6.852011e+07
+2016-12-31    9.179661e+08
+2017-12-31    1.395873e+09
+2018-12-31    1.612226e+09
+Freq: A-DEC, dtype: float64
+</code></pre>
+<h3 id="月度gmv分析">月度GMV分析</h3>
+<p>每年每月销售额的条形图</p>
+<pre><code class="language-python">gmv = pd.DataFrame(categroy_df.sum(axis=1))
+gmv.columns = ['GMV']
+</code></pre>
+<pre><code class="language-python">### 查看每一年的每个月的销售额的条形图
+gmv['month'] = gmv.index.month
+gmv['year'] = gmv.index.year
+</code></pre>
+<pre><code class="language-python">sns.set()
+plt.rcParams['font.sans-serif'] = 'SimHei'
+plt.rcParams['axes.unicode_minus'] = False
+</code></pre>
+<pre><code class="language-python">for year in [2015, 2016, 2017, 2018]:
+    gmv2018 = gmv.loc[gmv.year == year]
+    plt.bar(gmv2018.month, gmv2018.GMV)
+    plt.xticks(gmv2018.month, [f'{x}月' for x in gmv2018.month.values])
+    plt.ylabel('GMV')
+    plt.title(f'{year}年月度GMV分析') 
+    plt.show()
+</code></pre>
+<p>​<br>
+<img src="https://416426.github.io/post-images/1631612433639.png" alt="" loading="lazy"><br>
+​</p>
+<figure data-type="image" tabindex="4"><img src="https://416426.github.io/post-images/1631612454761.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://416426.github.io/post-images/1631612465753.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="https://416426.github.io/post-images/1631612474635.png" alt="" loading="lazy"></figure>
+<h3 id="连续三年的销售额变化">连续三年的销售额变化</h3>
+<pre><code class="language-python">两种方式
+1.  从第一年的11月到第二年的10月份
+2.  补全18年的数据   预测  -  - 同期均值
+        回归算法填充空值 均值/众数
+    
+回归算法： 决策树 knn  Linear
+</code></pre>
+<pre><code class="language-python">X,  y  
+
+X     y  销量  
+
+
+选择一：
+用18年的前10个月的时间作为X 销售额作y,， 给出2018-11， 预测第11个月的y
+
+选择二：
+用15，16，17的11月时间做X，销售额做y，  18的11做预测， 得到18年11月的y
+</code></pre>
+<pre><code class="language-python">categroy_df.head()
+</code></pre>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>灭鼠杀虫剂</th>
+      <th>电蚊香套装</th>
+      <th>盘香灭蟑香蚊香盘</th>
+      <th>蚊香加热器</th>
+      <th>蚊香液</th>
+      <th>蚊香片</th>
+      <th>防霉防蛀片</th>
+      <th>month</th>
+    </tr>
+    <tr>
+      <th>时间</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2018-10-01</th>
+      <td>1.136548e+08</td>
+      <td>106531.29</td>
+      <td>4171283.35</td>
+      <td>315639.48</td>
+      <td>7814546.15</td>
+      <td>1032414.29</td>
+      <td>8541153.59</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2018-09-01</th>
+      <td>1.440261e+08</td>
+      <td>105666.63</td>
+      <td>6784500.17</td>
+      <td>457366.41</td>
+      <td>10654973.47</td>
+      <td>1566651.88</td>
+      <td>8825870.43</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>2018-08-01</th>
+      <td>1.540426e+08</td>
+      <td>201467.03</td>
+      <td>10709683.41</td>
+      <td>746513.13</td>
+      <td>17835577.80</td>
+      <td>2617149.00</td>
+      <td>6320153.44</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>2018-07-01</th>
+      <td>1.480032e+08</td>
+      <td>438635.29</td>
+      <td>16589184.89</td>
+      <td>1871757.00</td>
+      <td>38877917.83</td>
+      <td>6209040.06</td>
+      <td>6302595.06</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>2018-06-01</th>
+      <td>1.359438e+08</td>
+      <td>953749.78</td>
+      <td>23526385.73</td>
+      <td>3641025.92</td>
+      <td>76499091.86</td>
+      <td>12484919.63</td>
+      <td>7047206.98</td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+<pre><code class="language-python">categroy_df['month'] = categroy_df.index.month
+</code></pre>
+<p>构造训练集</p>
+<pre><code class="language-python">month11 = categroy_df[categroy_df.month == 11]
+X1 = month11.index
+Y1 = month11.iloc[:,:-1].values
+</code></pre>
+<pre><code class="language-python">from sklearn.linear_model import Ridge
+</code></pre>
+<p>分析过程： 使用Timestamp类型也可以，但是太复杂，所以考虑使用更简洁的数据形式<br>
+观察发现，唯一不同的就是年 ，所以直接提取出年的信息，作为训练数据即可</p>
+<pre><code class="language-python">timestamp = X1[0]
+timestamp
+</code></pre>
+<pre><code>Timestamp('2017-11-01 00:00:00')
+</code></pre>
+<pre><code class="language-python">timestamp.strftime('%Y-%m-%d')
+</code></pre>
+<pre><code>'2017-11-01'
+</code></pre>
+<p>由于转换为文本类型仍然不可以建模，时间类型太复杂，所以只提取出年，进行计算</p>
+<pre><code class="language-python">X1 = month11.index.year.values
+</code></pre>
+<p>更新数据集</p>
+<pre><code class="language-python">X1 = X1.reshape((-1,1))
+</code></pre>
+<pre><code class="language-python">Y1
+</code></pre>
+<pre><code>array([[58382172.96,    94993.76,  1581530.2 ,   168141.79,  4257593.87,
+          617094.94,  5447184.43],
+       [47806248.76,   106291.23,  1473418.2 ,    82835.82,  2758827.44,
+          512990.23,  4975519.21],
+       [33038726.31,   185094.22,  1197791.27,    86889.91,  1579795.72,
+          325744.43,  3364112.14]])
+</code></pre>
+<pre><code class="language-python">ridge = Ridge()
+ridge.fit(X1, Y1)
+</code></pre>
+<pre><code>Ridge()
+</code></pre>
+<p>保存预测结果</p>
+<pre><code class="language-python"># 保存预测结果
+result11 = pd.DataFrame(data=ridge.predict([[2018]]), columns=month11.columns[:-1])
+result11.index = [pd.Timestamp('2018-11-01')]
+</code></pre>
+<p>同理预测12</p>
+<pre><code class="language-python">month12 = categroy_df[categroy_df.month==12]
+X2 = month12.index.year.values.reshape((-1,1))
+Y2 = month12.iloc[:,:-1].values
+</code></pre>
+<pre><code class="language-python">ridge2 = Ridge()
+ridge2.fit(X2, Y2)
+</code></pre>
+<pre><code>Ridge()
+</code></pre>
+<pre><code class="language-python"># 保存预测结果
+result12 = pd.DataFrame(data=ridge2.predict([[2018]]), columns=month12.columns[:-1])
+result12.index = [pd.Timestamp('2018-12-01')]
+</code></pre>
+<p>汇总数据</p>
+<pre><code class="language-python">category_total = pd.concat((result12, result11, categroy_df), sort=True)
+</code></pre>
+<p>补全月份信息</p>
+<pre><code class="language-python">category_total.month = category_total.index.month
+</code></pre>
+<p>要看连续三年的销售额（gmv）的变化趋势，所以先把每个月的各类别的销售数据进行汇总</p>
+<pre><code class="language-python">GMV_MOMTH = category_total.iloc[:,1:].sum(axis=1)
+</code></pre>
+<pre><code class="language-python"># resample 就是按照Y（年）来分组 ，前提是必须用时间类型做索引
+# 计算每一年的GMV总额
+GMV_YEAR = GMV_MOMTH.resample('Y').sum()
+</code></pre>
+<p>由于15年的数据不全，所以删除</p>
+<pre><code class="language-python">GMV_YEAR_DATA = GMV_YEAR.iloc[1:]
+plt.figure(figsize=(12, 6))
+
+plt.bar(GMV_YEAR_DATA.index, GMV_YEAR_DATA.values, width=100.0, color='lightgreen')
+plt.plot(GMV_YEAR_DATA.index, GMV_YEAR_DATA.values, color='green', marker='*', markersize=20)
+
+plt.xticks(GMV_YEAR_DATA.index, GMV_YEAR_DATA.index.year)
+plt.title('2016-2018连续三年销售趋势')
+plt.xlabel('年份')
+plt.ylabel('销售额（GMV）')
+</code></pre>
+<pre><code>Text(0, 0.5, '销售额（GMV）')
+</code></pre>
+<p>​</p>
+<p>​   <img src="https://416426.github.io/post-images/1631612520148.png" alt="" loading="lazy"></p>
+<p>连续三年销售额呈增长状态，且17-18涨幅有所降低</p>
+<pre><code class="language-python">GMV_YEAR_DATA.index.year
+</code></pre>
+<pre><code>Int64Index([2016, 2017, 2018], dtype='int64')
+</code></pre>
+<pre><code class="language-python">GMV_YEAR_DATA.values
+</code></pre>
+<pre><code>array([9.17966080e+08, 1.39587273e+09, 1.74288594e+09])
+</code></pre>
+<h2 id="每年各品类销售额占比分析">每年各品类销售额占比分析</h2>
+<pre><code class="language-python">#月份暂时没有用，删除
+
+category_total.drop(labels=['month'], inplace=True, axis=1)
+</code></pre>
+<pre><code class="language-python">#计算每一年个类别的销售总额
+category_year = category_total.resample('Y').sum()
+</code></pre>
+<pre><code class="language-python"># 删除15年数据
+</code></pre>
+<pre><code class="language-python">category_year = category_year.iloc[1:]
+category_year.plot()
+</code></pre>
+<pre><code>&lt;AxesSubplot:&gt;
+</code></pre>
+<p>​  <img src="https://416426.github.io/post-images/1631612549920.png" alt="" loading="lazy"><br>
+​</p>
+<p>由上图可以看出，灭鼠杀虫剂和蚊香液是核心市场</p>
+<h3 id="各市场占比">各市场占比</h3>
+<pre><code class="language-python">category_year
+</code></pre>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>灭鼠杀虫剂</th>
+      <th>电蚊香套装</th>
+      <th>盘香灭蟑香蚊香盘</th>
+      <th>蚊香加热器</th>
+      <th>蚊香液</th>
+      <th>蚊香片</th>
+      <th>防霉防蛀片</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-12-31</th>
+      <td>6.080471e+08</td>
+      <td>7.666572e+06</td>
+      <td>4.785285e+07</td>
+      <td>5.905205e+06</td>
+      <td>1.704905e+08</td>
+      <td>2.798084e+07</td>
+      <td>50023001.94</td>
+    </tr>
+    <tr>
+      <th>2017-12-31</th>
+      <td>8.477740e+08</td>
+      <td>9.377532e+06</td>
+      <td>8.635539e+07</td>
+      <td>1.055284e+07</td>
+      <td>3.300656e+08</td>
+      <td>4.906859e+07</td>
+      <td>62678822.18</td>
+    </tr>
+    <tr>
+      <th>2018-12-31</th>
+      <td>1.123380e+09</td>
+      <td>4.580538e+06</td>
+      <td>1.179678e+08</td>
+      <td>1.679795e+07</td>
+      <td>3.567718e+08</td>
+      <td>5.168906e+07</td>
+      <td>71698292.75</td>
+    </tr>
+  </tbody>
+</table>
+<pre><code class="language-python">category_year.loc['2016'].values[0]
+</code></pre>
+<pre><code>array([6.08047077e+08, 7.66657212e+06, 4.78528539e+07, 5.90520471e+06,
+       1.70490531e+08, 2.79808395e+07, 5.00230019e+07])
+</code></pre>
+<pre><code class="language-python">plt.figure(figsize=(18,4))
+loc=1
+for year in ['2016','2017','2018']:
+    plt.subplot(1,3, loc)
+    loc += 1
+    plt.pie(category_year.loc[year].values[0], labels=category_year.columns, autopct='%.2f%%')   
+    _ = plt.axis('equal')
+    _ = plt.title(year + '年')
+</code></pre>
+<p>​<br>
+<img src="https://416426.github.io/post-images/1631612578382.png" alt="" loading="lazy"><br>
+​</p>
+<h4 id="使用堆叠柱状图不但可以表达占比-还能表示出每年的销售总额">使用堆叠柱状图，不但可以表达占比， 还能表示出每年的销售总额</h4>
+<pre><code class="language-python">#测试数据
+data1 = np.array([1,2,3,4])
+data2 = np.array([4,3,2,1])
+data3 = np.array([2,3,1,5])
+plt.bar(np.arange(4), data1)
+plt.bar(np.arange(4), data2, bottom=data1)
+plt.bar(np.arange(4), data3, bottom=data1+data2)
+</code></pre>
+<pre><code>&lt;BarContainer object of 4 artists&gt;
+</code></pre>
+<p>​<br>
+<img src="https://416426.github.io/post-images/1631612598372.png" alt="" loading="lazy"><br>
+​</p>
+<pre><code class="language-python">plt.figure(figsize=(12, 6))
+data_sum = 0
+for col_index in range(category_year.columns.size):
+    # 读取每一列数据（3年各子类市场的销售数据）
+    data = category_year.iloc[:,col_index]
+    # 计算3年各子类市场的销售额占比
+    pct = data/category_year.sum(axis=1)
+    # 绘制堆叠柱状图
+    plt.bar(np.arange(3), data, bottom=data_sum,label=data.name)
+    
+    # 判断某一个子类市场的销售额占比，如果有一年超过了50%， 就把占比的数据绘制进来
+    if (pct &gt; 0.5).any():
+        y_locs = data/2 + data_sum
+        for x, y in zip(np.arange(3), y_locs):
+            plt.text(x=x-0.15, y=y, s=f'占比{np.round(pct[x]*100, 2)}%', fontdict={
+                'size':14,
+                'color':'white'
+            })
+    # 更新堆叠柱状图的bottom
+    data_sum += data
+    
+plt.legend()
+plt.xticks(np.arange(3), [2016, 2017, 2018])
+plt.xlabel('年份')
+plt.ylabel('子类市场累计销量')
+plt.title('三年各子类市场销量及占比分析', fontsize=18)
+plt.show()
+</code></pre>
+<figure data-type="image" tabindex="7"><img src="https://416426.github.io/post-images/1631612613064.png" alt="" loading="lazy"></figure>
+<pre><code class="language-python">np.round(1.231314,2)
+</code></pre>
+<pre><code>1.23
+</code></pre>
+<pre><code class="language-python">category_year.sum(axis=1)
+</code></pre>
+<pre><code>2016-12-31    9.179661e+08
+2017-12-31    1.395873e+09
+2018-12-31    1.742886e+09
+Freq: A-DEC, dtype: float64
+</code></pre>
+<pre><code class="language-python">category_year.iloc[:,0]/2
+</code></pre>
+<pre><code>2016-12-31    3.040235e+08
+2017-12-31    4.238870e+08
+2018-12-31    5.616902e+08
+Freq: A-DEC, Name: 灭鼠杀虫剂, dtype: float64
+</code></pre>
+<h3 id="计算三年的增长率">计算三年的增长率</h3>
+<pre><code class="language-python">category_year.index = category_year.index.year
+</code></pre>
+<pre><code class="language-python">category_incraserate = category_year.T
+</code></pre>
+<pre><code class="language-python">for last, current in zip(category_incraserate.columns[:2], category_incraserate.columns[1:]):
+    col_name = f'{last}-{current}'
+    category_incraserate[col_name] = (category_incraserate[current] - category_incraserate[last])/category_incraserate[last]
+</code></pre>
+<pre><code class="language-python">plt.figure(figsize=(12, 5))
+for index_name in category_incraserate.index:
+    row_data = category_incraserate.loc[index_name]
+    data = row_data.iloc[-2:]
+    plt.plot(data, label=index_name)
+plt.legend()
+plt.title('连续两年各子类市场的增长率分析')
+plt.xlabel('年份')
+plt.ylabel('增长率')
+plt.show()
+</code></pre>
+<figure data-type="image" tabindex="8"><img src="https://416426.github.io/post-images/1631612630818.png" alt="" loading="lazy"></figure>
+<pre><code class="language-python">category_incraserate.loc['电蚊香套装'].iloc[-2:]
+</code></pre>
+<pre><code>2016-2017    0.223171
+2017-2018   -0.511541
+Name: 电蚊香套装, dtype: float64
+</code></pre>
+<p>灭鼠杀虫市场：<br>
+不论是销售额占比、销售增长率都具备明显产品的潜质</p>
+<p>另外蚊香液市场也具备相应的增长潜质，但是稍逊于灭鼠杀虫市场</p>
+<p>市场机会点可以从这两个子类市场中查找</p>
 ]]></content>
     </entry>
     <entry>
