@@ -94,7 +94,7 @@
                         <input id="switch_default" type="checkbox" class="switch_default">
                         <label for="switch_default" class="toggleBtn"></label>
             </div>
-            <form id="gridea-search-form" data-update="1636850382030" action="/search/index.html">
+            <form id="gridea-search-form" data-update="1650931755928" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
             </form>
         </div>
@@ -113,7 +113,7 @@
                         <!--zh-->
                         <a id="mobile-toggle-theme-zh" class="a zh">&nbsp;&#x6697;&#x9ED1;</a>
                     </div>
-                    <form id="gridea-search-form" data-update="1636850382030" action="/search/index.html">
+                    <form id="gridea-search-form" data-update="1650931755928" action="/search/index.html">
                         <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
                     </form>
                     <!--en-->
@@ -231,9 +231,9 @@
                                         </a>
                                         <span class="post-time">&#x65E5;&#x671F;: <a href="#">2021-09-14</a></span>
                                         <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
-                                    href="#">17.1
+                                    href="#">72.6
                                     &#x5206;&#x949F;</a></span>
-                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">3599</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">16826</a></span>
                                         
                                             <span class="post-category">&#x5206;&#x7C7B;:
                                 
@@ -1144,6 +1144,3263 @@ Name: 电蚊香套装, dtype: float64
 不论是销售额占比、销售增长率都具备明显产品的潜质</p>
 <p>另外蚊香液市场也具备相应的增长潜质，但是稍逊于灭鼠杀虫市场</p>
 <p>市场机会点可以从这两个子类市场中查找</p>
+<h3 id="灭鼠市场的进一步分析">灭鼠市场的进一步分析</h3>
+<p>增长率高</p>
+<p>竞争度低</p>
+<p>竞品市场的市场占有率</p>
+<p>s1  == s2</p>
+<p>1-s1 == s2</p>
+<p>s1  s2</p>
+<pre><code class="language-python">def HHI(x): ## 行业j集中率
+    return x**2 + (1-x)**2 
+</code></pre>
+<pre><code class="language-python">x = np.linspace(0, 1, 100)
+</code></pre>
+<pre><code class="language-python">sns.set()
+plt.rcParams['font.sans-serif'] = 'SimHei'
+plt.rcParams['axes.unicode_minus'] = False
+</code></pre>
+<pre><code class="language-python"># 两家公司的竞争度， 当两家公司的份额相同时，竞争度最低
+plt.plot(x, HHI(x))
+plt.xlabel('市场份额')
+plt.ylabel('竞争度')
+# plt.legend()
+</code></pre>
+<pre><code>Text(0, 0.5, '竞争度')
+</code></pre>
+<p>​<br>
+<img src="" alt="" loading="lazy"><br>
+​</p>
+<h4 id="hhi指标垄断评估">HHI指标（垄断评估）</h4>
+<pre><code class="language-python">top100 = pd.read_excel('./data/驱虫剂市场/top100品牌数据.xlsx')
+top100
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>品牌</th>
+      <th>行业排名</th>
+      <th>交易指数</th>
+      <th>交易增长幅度</th>
+      <th>支付转化指数</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>PREMISE/拜灭士</td>
+      <td>1</td>
+      <td>530344</td>
+      <td>-0.3235</td>
+      <td>1521</td>
+      <td>趋势分析</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>科凌虫控</td>
+      <td>2</td>
+      <td>474937</td>
+      <td>-0.1910</td>
+      <td>1581</td>
+      <td>趋势分析</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ARS/安速</td>
+      <td>3</td>
+      <td>402372</td>
+      <td>-0.2682</td>
+      <td>1448</td>
+      <td>趋势分析</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>思乐智</td>
+      <td>4</td>
+      <td>360780</td>
+      <td>0.2056</td>
+      <td>841</td>
+      <td>趋势分析</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>希诺</td>
+      <td>5</td>
+      <td>346656</td>
+      <td>-0.1085</td>
+      <td>1865</td>
+      <td>趋势分析</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>BK/帮科</td>
+      <td>96</td>
+      <td>67812</td>
+      <td>-0.5008</td>
+      <td>1134</td>
+      <td>趋势分析</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>博尔康</td>
+      <td>97</td>
+      <td>66180</td>
+      <td>-0.2571</td>
+      <td>792</td>
+      <td>趋势分析</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>无比滴</td>
+      <td>98</td>
+      <td>65779</td>
+      <td>-0.6264</td>
+      <td>959</td>
+      <td>趋势分析</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>厚生</td>
+      <td>99</td>
+      <td>65520</td>
+      <td>-0.4708</td>
+      <td>1600</td>
+      <td>趋势分析</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>百户喜</td>
+      <td>100</td>
+      <td>65194</td>
+      <td>-0.0187</td>
+      <td>822</td>
+      <td>趋势分析</td>
+    </tr>
+  </tbody>
+</table>
+<p>100 rows × 6 columns</p>
+</div>
+<pre><code class="language-python"># 计算各品牌的市场占有率
+top100['s'] = top100['交易指数']/top100['交易指数'].sum()
+</code></pre>
+<pre><code class="language-python">HHI = (top100['s']**2).sum()
+HHI
+</code></pre>
+<pre><code>0.013546334007208918
+</code></pre>
+<p>范围:<br>
+[1/N,‘高度竞争行业’,0.01],<br>
+(0.01,‘不集中的行业’,0.15],<br>
+(0.15,‘中等集中’,0.25],<br>
+(0.25,‘高度集中’,1]</p>
+<p>杀虫剂市场的HHI值处于（0.01，0.15]范围，不集中行业，可以进一步挖掘业务增长机会点</p>
+<p>产品类别–&gt;细分价格段–&gt;属性</p>
+<p>品牌  地域  店铺...</p>
+<pre><code class="language-python">import os
+root_path = './data/灭鼠杀虫剂细分市场'
+
+kill_mouse = pd.DataFrame()
+
+for file in os.listdir(root_path):
+    file_path = os.path.join(root_path, file)
+    df = pd.read_excel(file_path)
+    kill_mouse = pd.concat((kill_mouse, df), ignore_index=True, sort=False)
+</code></pre>
+<pre><code class="language-python"># 需要的字段
+features = ['类别','宝贝标题','宝贝ID','销量（人数）','售价','预估销售额','类目','地域','店铺类型','型号','净含量','物理形态']
+</code></pre>
+<pre><code class="language-python">kill_mouse.head(3)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>类别</th>
+      <th>时间</th>
+      <th>页码</th>
+      <th>排名</th>
+      <th>链接</th>
+      <th>主图链接</th>
+      <th>主图视频链接</th>
+      <th>宝贝标题</th>
+      <th>宝贝ID</th>
+      <th>销量（人数）</th>
+      <th>...</th>
+      <th>包装数量</th>
+      <th>农药登记号</th>
+      <th>容量</th>
+      <th>使用时间</th>
+      <th>生产厂家</th>
+      <th>宝贝成份</th>
+      <th>规格：</th>
+      <th>樟脑</th>
+      <th>包装</th>
+      <th>产品名</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>杀虫</td>
+      <td>2018/11/22 18:49:48</td>
+      <td>16</td>
+      <td>18</td>
+      <td>https://item.taobao.com/item.htm?id=578459866289</td>
+      <td>https://gw3.alicdn.com/bao/uploaded/i3/4089164...</td>
+      <td>https://cloud.video.taobao.com/play/u/40891647...</td>
+      <td>德国拜耳臭虫杀虫剂家用杀灭除跳蚤药苍蝇猫狗窝喷剂蟑螂药</td>
+      <td>578459866289</td>
+      <td>99</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>杀虫</td>
+      <td>2018/11/22 18:49:49</td>
+      <td>16</td>
+      <td>19</td>
+      <td>https://item.taobao.com/item.htm?id=548196868239</td>
+      <td>https://gw3.alicdn.com/bao/uploaded/i3/1519846...</td>
+      <td>NaN</td>
+      <td>蟑螂屋灭蟑螂药家用强力灭蟑清捕捉器除杀蟑螂贴粘板粉杀虫剂特价</td>
+      <td>548196868239</td>
+      <td>99</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>杀虫</td>
+      <td>2018/11/22 18:49:49</td>
+      <td>16</td>
+      <td>20</td>
+      <td>https://item.taobao.com/item.htm?id=580839295562</td>
+      <td>https://gw3.alicdn.com/bao/uploaded/i2/1052281...</td>
+      <td>NaN</td>
+      <td>日本Hengai哼爱螨虫贴除螨虫垫祛螨床上用品沙发吸螨包家用杀虫</td>
+      <td>580839295562</td>
+      <td>99</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 229 columns</p>
+</div>
+<pre><code class="language-python">kill_mouse['类别'].value_counts()
+</code></pre>
+<pre><code>杀虫    2000
+蟑螂    1743
+灭鼠    1523
+螨      853
+虱      437
+Name: 类别, dtype: int64
+</code></pre>
+<pre><code class="language-python"># 读取灭鼠市场的数据
+mouse_data = kill_mouse.loc[kill_mouse['类别'] =='灭鼠', features].copy()
+</code></pre>
+<pre><code class="language-python">mouse_data.isnull().mean()
+</code></pre>
+<pre><code>类别        0.000000
+宝贝标题      0.000000
+宝贝ID      0.000000
+销量（人数）    0.000000
+售价        0.000000
+预估销售额     0.012475
+类目        0.000000
+地域        0.466842
+店铺类型      0.000000
+型号        0.351937
+净含量       0.692712
+物理形态      0.201576
+dtype: float64
+</code></pre>
+<p>查看某一个类别是否有增长的机会，就是看两点：</p>
+<ol>
+<li>市场份额  低 可以投入</li>
+<li>相对竞争度 越低， 说明这个类别下可以投入</li>
+</ol>
+<p>分析逻辑：</p>
+<p>产品类别–&gt;细分价格段–&gt;属性 （）</p>
+<p>增长机会点： 产品的【各种属性】进行更细一步的拆解</p>
+<p>分析属性时要注意：<br>
+属性是否是方便整合的  如果字段在录入时就不统一，应该先统一再处理</p>
+<pre><code class="language-python">mouse_data.head()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>类别</th>
+      <th>宝贝标题</th>
+      <th>宝贝ID</th>
+      <th>销量（人数）</th>
+      <th>售价</th>
+      <th>预估销售额</th>
+      <th>类目</th>
+      <th>地域</th>
+      <th>店铺类型</th>
+      <th>型号</th>
+      <th>净含量</th>
+      <th>物理形态</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000</th>
+      <td>灭鼠</td>
+      <td>老鼠胶驱鼠粘鼠板老鼠颗粒强力灭鼠贴家用药yao老鼠夹捕鼠神器笼</td>
+      <td>566054780243</td>
+      <td>9976</td>
+      <td>26.8</td>
+      <td>267356.8</td>
+      <td>灭鼠/杀虫剂</td>
+      <td>广东 韶关</td>
+      <td>天猫</td>
+      <td>MT007</td>
+      <td>NaN</td>
+      <td>胶水</td>
+    </tr>
+    <tr>
+      <th>2001</th>
+      <td>灭鼠</td>
+      <td>灭鼠神器家用抓老鼠神器粘鼠板捕鼠神器魔毯</td>
+      <td>566054780243</td>
+      <td>9976</td>
+      <td>26.8</td>
+      <td>267356.8</td>
+      <td>灭鼠/杀虫剂</td>
+      <td>广东 深圳</td>
+      <td>天猫</td>
+      <td>MT007</td>
+      <td>NaN</td>
+      <td>胶水</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>灭鼠</td>
+      <td>粘鼠板超强力老鼠贴粘老鼠板粘纸驱鼠灭鼠器电猫老鼠夹笼子粘鼠胶</td>
+      <td>572115448996</td>
+      <td>9945</td>
+      <td>9.9</td>
+      <td>98455.5</td>
+      <td>灭鼠/杀虫剂</td>
+      <td>NaN</td>
+      <td>淘宝</td>
+      <td>21/32</td>
+      <td>NaN</td>
+      <td>固体</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>灭鼠</td>
+      <td>云杀老鼠贴强力粘鼠板家用老鼠胶灭鼠器老鼠克星正品20片装</td>
+      <td>39868408322</td>
+      <td>99</td>
+      <td>29.9</td>
+      <td>2960.1</td>
+      <td>灭鼠/杀虫剂</td>
+      <td>河南 南阳</td>
+      <td>天猫</td>
+      <td>粘鼠板</td>
+      <td>NaN</td>
+      <td>固体</td>
+    </tr>
+    <tr>
+      <th>2004</th>
+      <td>灭鼠</td>
+      <td>得硕粘鼠板超强力大老鼠贴家用捕鼠器灭老鼠笼胶鼠夹子抓老鼠工具</td>
+      <td>520282897220</td>
+      <td>99</td>
+      <td>39.9</td>
+      <td>3950.1</td>
+      <td>灭鼠/杀虫剂</td>
+      <td>NaN</td>
+      <td>淘宝</td>
+      <td>NaN</td>
+      <td>g</td>
+      <td>固体</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">import warnings
+warnings.filterwarnings('ignore')
+</code></pre>
+<pre><code class="language-python">sns.distplot(mouse_data['售价'])
+</code></pre>
+<pre><code>&lt;AxesSubplot:xlabel='售价', ylabel='Density'&gt;
+</code></pre>
+<p>​<br>
+<img src="output_95_1.png" alt="png" loading="lazy"><br>
+​</p>
+<pre><code class="language-python">bins = np.arange(0, 350, 50)
+bins = np.concatenate((bins, [float('inf')]))
+bins
+</code></pre>
+<pre><code>array([  0.,  50., 100., 150., 200., 250., 300.,  inf])
+</code></pre>
+<pre><code class="language-python"># 根据bins生成标签的方法
+def creat_label(bins):
+    res = []
+    for i in range(bins.size-1):
+        pre = bins[i]
+        current = bins[i+1]
+        label = '%.0f-%.0f'%(pre, current)
+        if current == float('inf'):
+            label = '%.0f以上'%(pre)
+        res.append(label)
+    return res
+creat_label(bins)
+</code></pre>
+<pre><code>['0-10',
+ '10-20',
+ '20-30',
+ '30-40',
+ '40-50',
+ '50-60',
+ '60-70',
+ '70-80',
+ '80-90',
+ '90-100']
+</code></pre>
+<pre><code class="language-python"># 计算相对竞争度的函数
+def map_compatitive(x):
+    return 1 - (x - x.min())/(x.max() - x.min())
+</code></pre>
+<pre><code class="language-python"># 分组逻辑
+mouse_data['价格区间'] = pd.cut(mouse_data['售价'], bins=bins, labels=create_label(bins))
+</code></pre>
+<pre><code class="language-python"># mouse_data: 是一个以‘价格区间’ 作为分组字段的dataFrame
+def create_compatitive_table(mouse_data):
+    # 计算预估销售额（价格区间内）
+    预估销售额 = pd.DataFrame(mouse_data.groupby('价格区间')['预估销售额'].sum())
+    # 计算预估销售额占比
+    预估销售额占比 = 预估销售额/预估销售额.sum()
+    预估销售额占比.columns = ['预估销售额占比']
+
+    # 计算宝贝数量 （宝贝种类）
+    # 交叉表 特殊的透视表  count  两组数据的交叉关系
+    cross_table = pd.crosstab(index=mouse_data['价格区间'], columns=mouse_data['宝贝ID'])
+    宝贝数 = (cross_table &gt; 0).sum(axis=1)
+    宝贝数 = pd.DataFrame(宝贝数, columns=['宝贝数'])
+
+    # 单宝贝销售额
+    单宝贝平均销售额 = 预估销售额['预估销售额'] / 宝贝数['宝贝数']
+    单宝贝平均销售额.name = '单宝贝平均销售额'
+    单宝贝平均销售额 = pd.DataFrame(单宝贝平均销售额)
+
+    # 相对竞争度
+    相对竞争度 = map_compatitive(单宝贝平均销售额)
+    相对竞争度.columns = ['相对竞争度']
+
+    return pd.concat((预估销售额,预估销售额占比,宝贝数,单宝贝平均销售额,相对竞争度), axis=1)
+</code></pre>
+<pre><code class="language-python">create_compatitive_table(mouse_data)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>预估销售额</th>
+      <th>预估销售额占比</th>
+      <th>宝贝数</th>
+      <th>单宝贝平均销售额</th>
+      <th>相对竞争度</th>
+    </tr>
+    <tr>
+      <th>价格区间</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0-10</th>
+      <td>141388.77</td>
+      <td>0.007644</td>
+      <td>166</td>
+      <td>851.739578</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>10-20</th>
+      <td>8102634.14</td>
+      <td>0.438048</td>
+      <td>272</td>
+      <td>29789.096103</td>
+      <td>0.238170</td>
+    </tr>
+    <tr>
+      <th>20-30</th>
+      <td>4969620.92</td>
+      <td>0.268670</td>
+      <td>278</td>
+      <td>17876.334245</td>
+      <td>0.551796</td>
+    </tr>
+    <tr>
+      <th>30-40</th>
+      <td>1240874.19</td>
+      <td>0.067085</td>
+      <td>98</td>
+      <td>12661.981531</td>
+      <td>0.689073</td>
+    </tr>
+    <tr>
+      <th>40-50</th>
+      <td>707568.49</td>
+      <td>0.038253</td>
+      <td>40</td>
+      <td>17689.212250</td>
+      <td>0.556722</td>
+    </tr>
+    <tr>
+      <th>50-60</th>
+      <td>632300.28</td>
+      <td>0.034184</td>
+      <td>33</td>
+      <td>19160.614545</td>
+      <td>0.517984</td>
+    </tr>
+    <tr>
+      <th>60-70</th>
+      <td>1786443.74</td>
+      <td>0.096579</td>
+      <td>46</td>
+      <td>38835.733478</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>70-80</th>
+      <td>38133.02</td>
+      <td>0.002062</td>
+      <td>18</td>
+      <td>2118.501111</td>
+      <td>0.966650</td>
+    </tr>
+    <tr>
+      <th>80-90</th>
+      <td>217468.44</td>
+      <td>0.011757</td>
+      <td>33</td>
+      <td>6589.952727</td>
+      <td>0.848931</td>
+    </tr>
+    <tr>
+      <th>90-100</th>
+      <td>660714.71</td>
+      <td>0.035720</td>
+      <td>42</td>
+      <td>15731.302619</td>
+      <td>0.608268</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">## 把0-100之间的数据拆分成10组
+mouse_data100 = mouse_data.loc[mouse_data['售价'] &lt;= 100].copy()
+bins = np.arange(0, 110, step=10)
+labels = creat_label(bins)
+mouse_data100['价格区间'] = pd.cut(mouse_data100['售价'], bins=bins, labels=labels)
+create_compatitive_table(mouse_data100)
+
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>预估销售额</th>
+      <th>预估销售额占比</th>
+      <th>宝贝数</th>
+      <th>单宝贝平均销售额</th>
+      <th>相对竞争度</th>
+    </tr>
+    <tr>
+      <th>价格区间</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0-10</th>
+      <td>141388.77</td>
+      <td>0.007644</td>
+      <td>166</td>
+      <td>851.739578</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>10-20</th>
+      <td>8102634.14</td>
+      <td>0.438048</td>
+      <td>272</td>
+      <td>29789.096103</td>
+      <td>0.238170</td>
+    </tr>
+    <tr>
+      <th>20-30</th>
+      <td>4969620.92</td>
+      <td>0.268670</td>
+      <td>278</td>
+      <td>17876.334245</td>
+      <td>0.551796</td>
+    </tr>
+    <tr>
+      <th>30-40</th>
+      <td>1240874.19</td>
+      <td>0.067085</td>
+      <td>98</td>
+      <td>12661.981531</td>
+      <td>0.689073</td>
+    </tr>
+    <tr>
+      <th>40-50</th>
+      <td>707568.49</td>
+      <td>0.038253</td>
+      <td>40</td>
+      <td>17689.212250</td>
+      <td>0.556722</td>
+    </tr>
+    <tr>
+      <th>50-60</th>
+      <td>632300.28</td>
+      <td>0.034184</td>
+      <td>33</td>
+      <td>19160.614545</td>
+      <td>0.517984</td>
+    </tr>
+    <tr>
+      <th>60-70</th>
+      <td>1786443.74</td>
+      <td>0.096579</td>
+      <td>46</td>
+      <td>38835.733478</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>70-80</th>
+      <td>38133.02</td>
+      <td>0.002062</td>
+      <td>18</td>
+      <td>2118.501111</td>
+      <td>0.966650</td>
+    </tr>
+    <tr>
+      <th>80-90</th>
+      <td>217468.44</td>
+      <td>0.011757</td>
+      <td>33</td>
+      <td>6589.952727</td>
+      <td>0.848931</td>
+    </tr>
+    <tr>
+      <th>90-100</th>
+      <td>660714.71</td>
+      <td>0.035720</td>
+      <td>42</td>
+      <td>15731.302619</td>
+      <td>0.608268</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python"># 把拆分的过程进行封装
+def create_price_table(bins, mouse_data):
+    ## 把0-100之间的数据拆分成10组
+    high = bins[-1]
+    mouse_data100 = mouse_data.loc[mouse_data['售价'] &lt;= high].copy()
+    labels = creat_label(bins)
+    mouse_data100['价格区间'] = pd.cut(mouse_data100['售价'], bins=bins, labels=labels)
+    return create_compatitive_table(mouse_data100)
+</code></pre>
+<pre><code class="language-python">bins = np.arange(0, 110, 10)
+create_price_table(bins, mouse_data)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>预估销售额</th>
+      <th>预估销售额占比</th>
+      <th>宝贝数</th>
+      <th>单宝贝平均销售额</th>
+      <th>相对竞争度</th>
+    </tr>
+    <tr>
+      <th>价格区间</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0-10</th>
+      <td>141388.77</td>
+      <td>0.007644</td>
+      <td>166</td>
+      <td>851.739578</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>10-20</th>
+      <td>8102634.14</td>
+      <td>0.438048</td>
+      <td>272</td>
+      <td>29789.096103</td>
+      <td>0.238170</td>
+    </tr>
+    <tr>
+      <th>20-30</th>
+      <td>4969620.92</td>
+      <td>0.268670</td>
+      <td>278</td>
+      <td>17876.334245</td>
+      <td>0.551796</td>
+    </tr>
+    <tr>
+      <th>30-40</th>
+      <td>1240874.19</td>
+      <td>0.067085</td>
+      <td>98</td>
+      <td>12661.981531</td>
+      <td>0.689073</td>
+    </tr>
+    <tr>
+      <th>40-50</th>
+      <td>707568.49</td>
+      <td>0.038253</td>
+      <td>40</td>
+      <td>17689.212250</td>
+      <td>0.556722</td>
+    </tr>
+    <tr>
+      <th>50-60</th>
+      <td>632300.28</td>
+      <td>0.034184</td>
+      <td>33</td>
+      <td>19160.614545</td>
+      <td>0.517984</td>
+    </tr>
+    <tr>
+      <th>60-70</th>
+      <td>1786443.74</td>
+      <td>0.096579</td>
+      <td>46</td>
+      <td>38835.733478</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>70-80</th>
+      <td>38133.02</td>
+      <td>0.002062</td>
+      <td>18</td>
+      <td>2118.501111</td>
+      <td>0.966650</td>
+    </tr>
+    <tr>
+      <th>80-90</th>
+      <td>217468.44</td>
+      <td>0.011757</td>
+      <td>33</td>
+      <td>6589.952727</td>
+      <td>0.848931</td>
+    </tr>
+    <tr>
+      <th>90-100</th>
+      <td>660714.71</td>
+      <td>0.035720</td>
+      <td>42</td>
+      <td>15731.302619</td>
+      <td>0.608268</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">bins = np.arange(0, 350, 50)
+bins = np.concatenate((bins, [float('inf')]))
+price_table = create_price_table(bins, mouse_data)
+price_table
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>预估销售额</th>
+      <th>预估销售额占比</th>
+      <th>宝贝数</th>
+      <th>单宝贝平均销售额</th>
+      <th>相对竞争度</th>
+    </tr>
+    <tr>
+      <th>价格区间</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0-50</th>
+      <td>15162086.51</td>
+      <td>0.590286</td>
+      <td>854</td>
+      <td>17754.199660</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>50-100</th>
+      <td>3335060.19</td>
+      <td>0.129840</td>
+      <td>172</td>
+      <td>19389.884826</td>
+      <td>0.995629</td>
+    </tr>
+    <tr>
+      <th>100-150</th>
+      <td>2758086.29</td>
+      <td>0.107377</td>
+      <td>46</td>
+      <td>59958.397609</td>
+      <td>0.887218</td>
+    </tr>
+    <tr>
+      <th>150-200</th>
+      <td>629813.00</td>
+      <td>0.024520</td>
+      <td>28</td>
+      <td>22493.321429</td>
+      <td>0.987336</td>
+    </tr>
+    <tr>
+      <th>200-250</th>
+      <td>2743758.00</td>
+      <td>0.106819</td>
+      <td>7</td>
+      <td>391965.428571</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>250-300</th>
+      <td>237740.00</td>
+      <td>0.009256</td>
+      <td>9</td>
+      <td>26415.555556</td>
+      <td>0.976854</td>
+    </tr>
+    <tr>
+      <th>300以上</th>
+      <td>819468.00</td>
+      <td>0.031903</td>
+      <td>18</td>
+      <td>45526.000000</td>
+      <td>0.925786</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">plt.figure(figsize=(12, 5))
+price_table['预估销售额占比'].plot(kind='bar')
+price_table['相对竞争度'].plot(kind='line')
+plt.legend()
+</code></pre>
+<pre><code>&lt;matplotlib.legend.Legend at 0x15b011d2700&gt;
+</code></pre>
+<p>​<br>
+<img src="output_106_1.png" alt="png" loading="lazy"><br>
+​</p>
+<p>200-250价格区间时相对竞争度最低的，所以可以作为高端市场的机会点</p>
+<p>0-50市场份额高，相对竞争度也高， 但是由于市场份额很高，所以可以进一步的挖掘更细致价格区间</p>
+<pre><code class="language-python">bins = np.arange(0, 60, 10)
+
+price_table_50 = create_price_table(bins=bins, mouse_data=mouse_data)
+
+</code></pre>
+<pre><code class="language-python">def show_compatitive(price_table):
+    plt.figure(figsize=(12, 5))
+    price_table['预估销售额占比'].plot(kind='bar')
+    price_table['相对竞争度'].plot(kind='line')
+    plt.legend()
+    plt.show()
+</code></pre>
+<pre><code class="language-python">show_compatitive(price_table_50)
+</code></pre>
+<p>​<br>
+<img src="output_110_0.png" alt="png" loading="lazy"><br>
+​</p>
+<p>10-20元的细分市场，市场份额很高，相对竞争度很低</p>
+<p>20-30元的区间，仅次于10-20元的市场，也可以考虑</p>
+<h4 id="灭鼠杀虫市场的进一步分析">灭鼠杀虫市场的进一步分析</h4>
+<p>查看哪个2级类目有更高的市场占有率和增长率</p>
+<pre><code class="language-python">kill_mouse = kill_mouse[features].copy()
+</code></pre>
+<pre><code class="language-python">kill_mouse.groupby('类别')['预估销售额'].sum().plot(kind='pie', autopct='%.2f%%')
+plt.axis('equal')
+plt.show()
+</code></pre>
+<p>​<br>
+<img src="output_114_0.png" alt="png" loading="lazy"><br>
+​</p>
+<p>除灭鼠市场外，蟑螂市场也有较高的占有率，所以可以进一步的挖掘机会点</p>
+<h4 id="继续挖掘其他属性">继续挖掘其他属性</h4>
+<pre><code class="language-python">
+kill_mouse
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>类别</th>
+      <th>宝贝标题</th>
+      <th>宝贝ID</th>
+      <th>销量（人数）</th>
+      <th>售价</th>
+      <th>预估销售额</th>
+      <th>类目</th>
+      <th>地域</th>
+      <th>店铺类型</th>
+      <th>型号</th>
+      <th>净含量</th>
+      <th>物理形态</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>杀虫</td>
+      <td>德国拜耳臭虫杀虫剂家用杀灭除跳蚤药苍蝇猫狗窝喷剂蟑螂药</td>
+      <td>578459866289</td>
+      <td>99</td>
+      <td>29.9</td>
+      <td>2960.1</td>
+      <td>灭鼠/杀虫剂</td>
+      <td>NaN</td>
+      <td>天猫</td>
+      <td>特姆得</td>
+      <td>NaN</td>
+      <td>液体</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>杀虫</td>
+      <td>蟑螂屋灭蟑螂药家用强力灭蟑清捕捉器除杀蟑螂贴粘板粉杀虫剂特价</td>
+      <td>548196868239</td>
+      <td>99</td>
+      <td>0.6</td>
+      <td>59.4</td>
+      <td>灭鼠/杀虫剂</td>
+      <td>浙江 金华</td>
+      <td>淘宝</td>
+      <td>180325</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>杀虫</td>
+      <td>日本Hengai哼爱螨虫贴除螨虫垫祛螨床上用品沙发吸螨包家用杀虫</td>
+      <td>580839295562</td>
+      <td>99</td>
+      <td>98.0</td>
+      <td>9702.0</td>
+      <td>灭鼠/杀虫剂</td>
+      <td>广东 深圳</td>
+      <td>淘宝</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>杀虫</td>
+      <td>蚧壳虫专杀小白药小黑飞多肉花卉介壳虫用专治dx柑橘树植物杀虫剂</td>
+      <td>580264662322</td>
+      <td>99</td>
+      <td>6.9</td>
+      <td>683.1</td>
+      <td>灭鼠/杀虫剂</td>
+      <td>河南 商丘</td>
+      <td>淘宝</td>
+      <td>NaN</td>
+      <td>30g</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>杀虫</td>
+      <td>雷达杀虫气雾剂清香型家用式蚊子苍蝇蟑螂蚂蚁除虫杀虫剂害虫喷剂</td>
+      <td>44484517973</td>
+      <td>99</td>
+      <td>18.8</td>
+      <td>1861.2</td>
+      <td>灭鼠/杀虫剂</td>
+      <td>河北 秦皇岛</td>
+      <td>天猫</td>
+      <td>雷达杀虫气雾剂清香</td>
+      <td>600ml</td>
+      <td>喷雾</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6551</th>
+      <td>蟑螂</td>
+      <td>达豪杀蟑笔剂正品神笔蟑螂药跳蚤杀蟑粉笔画笔蚂蚁强效触杀全巢灭</td>
+      <td>567322968739</td>
+      <td>14</td>
+      <td>9.9</td>
+      <td>138.6</td>
+      <td>灭鼠/杀虫剂</td>
+      <td>上海 上海</td>
+      <td>淘宝</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6552</th>
+      <td>蟑螂</td>
+      <td>榄菊速杀杀虫气雾剂 杀蟑螂、跳蚤等蚊虫2件24瓶375元包邮</td>
+      <td>547638024194</td>
+      <td>14</td>
+      <td>375.0</td>
+      <td>5250.0</td>
+      <td>灭鼠/杀虫剂</td>
+      <td>湖南 常德</td>
+      <td>淘宝</td>
+      <td>速杀型杀虫气雾剂600ml</td>
+      <td>600ML</td>
+      <td>喷雾</td>
+    </tr>
+    <tr>
+      <th>6553</th>
+      <td>蟑螂</td>
+      <td>全无敌家用室内600ml杀虫剂无香卧室 驱杀蟑螂蚂蚁苍蝇喷雾气雾剂</td>
+      <td>572950517334</td>
+      <td>14</td>
+      <td>20.8</td>
+      <td>291.2</td>
+      <td>灭鼠/杀虫剂</td>
+      <td>河北 秦皇岛</td>
+      <td>天猫</td>
+      <td>全无敌杀虫气雾剂无香600ml</td>
+      <td>NaN</td>
+      <td>喷雾</td>
+    </tr>
+    <tr>
+      <th>6554</th>
+      <td>蟑螂</td>
+      <td>云杀 蟑螂小强药杀蟑胶饵除灭蟑螂屋粘贴板驱蟑粉厨房家用虫剂</td>
+      <td>540393439567</td>
+      <td>14</td>
+      <td>7.9</td>
+      <td>110.6</td>
+      <td>灭鼠/杀虫剂</td>
+      <td>浙江 杭州</td>
+      <td>淘宝</td>
+      <td>蟑螂</td>
+      <td>10g</td>
+      <td>啫喱</td>
+    </tr>
+    <tr>
+      <th>6555</th>
+      <td>蟑螂</td>
+      <td>蟑螂屋蟑螂贴粘板贴纸家用无毒灭蟑螂家用强力灭蟑清买20张送10包</td>
+      <td>567544678713</td>
+      <td>14</td>
+      <td>14.9</td>
+      <td>208.6</td>
+      <td>灭鼠/杀虫剂</td>
+      <td>江西 赣州</td>
+      <td>淘宝</td>
+      <td>NaN</td>
+      <td>10枚/盒</td>
+      <td>固体</td>
+    </tr>
+  </tbody>
+</table>
+<p>6556 rows × 12 columns</p>
+</div>
+<pre><code class="language-python"># mouse_data: 是一个以‘价格区间’ 作为分组字段的dataFrame
+def create_compatitive_table_by(mouse_data, by):
+    # 计算预估销售额（价格区间内）
+    预估销售额 = pd.DataFrame(mouse_data.groupby(by)['预估销售额'].sum())
+    # 计算预估销售额占比
+    预估销售额占比 = 预估销售额/预估销售额.sum()
+    预估销售额占比.columns = ['预估销售额占比']
+
+    # 计算宝贝数量 （宝贝种类）
+    # 交叉表 特殊的透视表  count  两组数据的交叉关系
+    cross_table = pd.crosstab(index=mouse_data[by], columns=mouse_data['宝贝ID'])
+    宝贝数 = (cross_table &gt; 0).sum(axis=1)
+    宝贝数 = pd.DataFrame(宝贝数, columns=['宝贝数'])
+
+    # 单宝贝销售额
+    单宝贝平均销售额 = 预估销售额['预估销售额'] / 宝贝数['宝贝数']
+    单宝贝平均销售额.name = '单宝贝平均销售额'
+    单宝贝平均销售额 = pd.DataFrame(单宝贝平均销售额)
+
+    # 相对竞争度
+    相对竞争度 = map_compatitive(单宝贝平均销售额)
+    相对竞争度.columns = ['相对竞争度']
+
+    return pd.concat((预估销售额,预估销售额占比,宝贝数,单宝贝平均销售额,相对竞争度), axis=1)
+</code></pre>
+<pre><code class="language-python">create_compatitive_table_by(mouse_data, '店铺类型')
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>预估销售额</th>
+      <th>预估销售额占比</th>
+      <th>宝贝数</th>
+      <th>单宝贝平均销售额</th>
+      <th>相对竞争度</th>
+    </tr>
+    <tr>
+      <th>店铺类型</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>天猫</th>
+      <td>23551572.38</td>
+      <td>0.916903</td>
+      <td>345</td>
+      <td>68265.427188</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>淘宝</th>
+      <td>2134439.61</td>
+      <td>0.083097</td>
+      <td>789</td>
+      <td>2705.246654</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">mouse_data.head()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>类别</th>
+      <th>宝贝标题</th>
+      <th>宝贝ID</th>
+      <th>销量（人数）</th>
+      <th>售价</th>
+      <th>预估销售额</th>
+      <th>类目</th>
+      <th>地域</th>
+      <th>店铺类型</th>
+      <th>型号</th>
+      <th>净含量</th>
+      <th>物理形态</th>
+      <th>价格区间</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000</th>
+      <td>灭鼠</td>
+      <td>老鼠胶驱鼠粘鼠板老鼠颗粒强力灭鼠贴家用药yao老鼠夹捕鼠神器笼</td>
+      <td>566054780243</td>
+      <td>9976</td>
+      <td>26.8</td>
+      <td>267356.8</td>
+      <td>灭鼠/杀虫剂</td>
+      <td>广东 韶关</td>
+      <td>天猫</td>
+      <td>MT007</td>
+      <td>NaN</td>
+      <td>胶水</td>
+      <td>20-30</td>
+    </tr>
+    <tr>
+      <th>2001</th>
+      <td>灭鼠</td>
+      <td>灭鼠神器家用抓老鼠神器粘鼠板捕鼠神器魔毯</td>
+      <td>566054780243</td>
+      <td>9976</td>
+      <td>26.8</td>
+      <td>267356.8</td>
+      <td>灭鼠/杀虫剂</td>
+      <td>广东 深圳</td>
+      <td>天猫</td>
+      <td>MT007</td>
+      <td>NaN</td>
+      <td>胶水</td>
+      <td>20-30</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>灭鼠</td>
+      <td>粘鼠板超强力老鼠贴粘老鼠板粘纸驱鼠灭鼠器电猫老鼠夹笼子粘鼠胶</td>
+      <td>572115448996</td>
+      <td>9945</td>
+      <td>9.9</td>
+      <td>98455.5</td>
+      <td>灭鼠/杀虫剂</td>
+      <td>NaN</td>
+      <td>淘宝</td>
+      <td>21/32</td>
+      <td>NaN</td>
+      <td>固体</td>
+      <td>0-10</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>灭鼠</td>
+      <td>云杀老鼠贴强力粘鼠板家用老鼠胶灭鼠器老鼠克星正品20片装</td>
+      <td>39868408322</td>
+      <td>99</td>
+      <td>29.9</td>
+      <td>2960.1</td>
+      <td>灭鼠/杀虫剂</td>
+      <td>河南 南阳</td>
+      <td>天猫</td>
+      <td>粘鼠板</td>
+      <td>NaN</td>
+      <td>固体</td>
+      <td>20-30</td>
+    </tr>
+    <tr>
+      <th>2004</th>
+      <td>灭鼠</td>
+      <td>得硕粘鼠板超强力大老鼠贴家用捕鼠器灭老鼠笼胶鼠夹子抓老鼠工具</td>
+      <td>520282897220</td>
+      <td>99</td>
+      <td>39.9</td>
+      <td>3950.1</td>
+      <td>灭鼠/杀虫剂</td>
+      <td>NaN</td>
+      <td>淘宝</td>
+      <td>NaN</td>
+      <td>g</td>
+      <td>固体</td>
+      <td>30-40</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">### 对产品型号的top10分析
+type_top10 = create_compatitive_table_by(mouse_data, '型号').sort_values('预估销售额', ascending=False)[:10]
+type_top10
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>预估销售额</th>
+      <th>预估销售额占比</th>
+      <th>宝贝数</th>
+      <th>单宝贝平均销售额</th>
+      <th>相对竞争度</th>
+    </tr>
+    <tr>
+      <th>型号</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SK600</th>
+      <td>2672898.00</td>
+      <td>0.107333</td>
+      <td>1</td>
+      <td>2.672898e+06</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>超强力粘鼠板</th>
+      <td>2120129.32</td>
+      <td>0.085136</td>
+      <td>12</td>
+      <td>1.766774e+05</td>
+      <td>0.933900</td>
+    </tr>
+    <tr>
+      <th>粘鼠板老鼠贴</th>
+      <td>2051699.02</td>
+      <td>0.082388</td>
+      <td>7</td>
+      <td>2.930999e+05</td>
+      <td>0.890344</td>
+    </tr>
+    <tr>
+      <th>JF-807</th>
+      <td>1121452.00</td>
+      <td>0.045033</td>
+      <td>1</td>
+      <td>1.121452e+06</td>
+      <td>0.580436</td>
+    </tr>
+    <tr>
+      <th>0005</th>
+      <td>927590.70</td>
+      <td>0.037248</td>
+      <td>2</td>
+      <td>4.637953e+05</td>
+      <td>0.826482</td>
+    </tr>
+    <tr>
+      <th>驰天粘鼠板</th>
+      <td>876606.33</td>
+      <td>0.035201</td>
+      <td>4</td>
+      <td>2.191516e+05</td>
+      <td>0.918010</td>
+    </tr>
+    <tr>
+      <th>QL-866</th>
+      <td>759629.30</td>
+      <td>0.030504</td>
+      <td>3</td>
+      <td>2.532098e+05</td>
+      <td>0.905268</td>
+    </tr>
+    <tr>
+      <th>SD08-F4</th>
+      <td>707658.00</td>
+      <td>0.028417</td>
+      <td>2</td>
+      <td>3.538290e+05</td>
+      <td>0.867623</td>
+    </tr>
+    <tr>
+      <th>SK300 2018</th>
+      <td>706422.00</td>
+      <td>0.028367</td>
+      <td>1</td>
+      <td>7.064220e+05</td>
+      <td>0.735709</td>
+    </tr>
+    <tr>
+      <th>大功率驱鼠器</th>
+      <td>691794.00</td>
+      <td>0.027780</td>
+      <td>1</td>
+      <td>6.917940e+05</td>
+      <td>0.741182</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">show_compatitive(type_top10)
+</code></pre>
+<p>​<br>
+<img src="output_121_0.png" alt="png" loading="lazy"><br>
+​</p>
+<p>SK600 JF-807时两款相对竞争度很低的产品型号，可以进一步关注</p>
+<p>但是由于产品型号差异太大，500多种，所以参考价值较低，可以进一步和市场人员沟通</p>
+<pre><code class="language-python">mouse_data['地域'].unique()
+</code></pre>
+<pre><code>array(['广东 韶关', '广东 深圳', nan, '河南 南阳', '浙江 金华', '上海', '广东 广州', '广东 东莞',
+       '浙江 宁波', '福建省 泉州市', '江苏 无锡', '山东省 青岛市', '上海 上海市', '北京', '山东 青岛',
+       '江苏 宿迁', '河北 唐山', '江苏 盐城', '广东 佛山', '江苏 常州', '浙江省 温州市', '山东 济宁',
+       '上海 上海', '北京 北京', '江苏省 常州市', '安徽 蚌埠', '广东省 珠海市', '四川 成都', '浙江 杭州',
+       '河南 郑州', '广东 中山', '浙江省 衢州市', '辽宁 沈阳', '湖南 长沙', '北京 北京市', '江苏 苏州',
+       '湖北 武汉', '河北 石家庄', '四川省 成都市', '福建 厦门', '广东 汕头', '山东 菏泽', '广东省 广州市',
+       '海南 海口', '浙江省 杭州市', '广东 惠州', '江苏 南京', '广东省 东莞市', '重庆 重庆', '广东 茂名',
+       '山东 济南', '辽宁 锦州', '浙江 温州', '福建省 厦门市', '浙江 嘉兴', '河北 邯郸', '广东 珠海',
+       '河南 新乡', '天津', '江西 吉安', '辽宁省 大连市', '广东省 深圳市', '山东 枣庄', '广东省 佛山市',
+       '福建 泉州', '浙江省 金华市', '山东 潍坊', '福建 福州', '安徽省 滁州市', ' 苏州市', '湖南省 长沙市',
+       '辽宁 大连', '河北 廊坊', '浙江 绍兴', '天津 天津', '安徽 安庆', '安徽 合肥', '山东 聊城',
+       ' 沈阳市', '山东省 聊城市', '湖北省 武汉市', '河北 秦皇岛', '江苏 镇江', '浙江 台州', '河北 沧州'],
+      dtype=object)
+</code></pre>
+<pre><code class="language-python">city_moust_data = mouse_data.loc[mouse_data['地域'].notnull()].copy()
+</code></pre>
+<pre><code class="language-python">def split_province_city(x):
+    infomation = x.split(' ')
+    if len(infomation) &lt;= 1:
+        return np.array([infomation[0], infomation[0]])
+    else:
+        return np.array(infomation)
+</code></pre>
+<pre><code class="language-python">split_province_city('广东 深圳')
+</code></pre>
+<pre><code>array(['广东', '深圳'], dtype='&lt;U2')
+</code></pre>
+<pre><code class="language-python">city_infos = city_moust_data['地域'].map(split_province_city).values
+
+city_info_list = []
+for info in city_infos:
+    city_info_list.append([info[0], info[1]])
+</code></pre>
+<pre><code class="language-python">city_info_df = pd.DataFrame(city_info_list, columns=['省份','城市'])
+</code></pre>
+<pre><code class="language-python"># 重置索引
+city_moust_data.index = np.arange(city_moust_data.shape[0])
+</code></pre>
+<pre><code class="language-python">city_mouse_data = pd.concat((city_moust_data, city_info_df), axis=1)
+</code></pre>
+<p>由于省份信息不统一，把省份统一处理</p>
+<pre><code class="language-python">city_mouse_data['省份'].unique()
+</code></pre>
+<pre><code>array(['广东', '河南', '浙江', '上海', '福建省', '江苏', '山东省', '北京', '山东', '河北',
+       '浙江省', '江苏省', '安徽', '广东省', '四川', '辽宁', '湖南', '湖北', '四川省', '福建',
+       '海南', '重庆', '天津', '江西', '辽宁省', '安徽省', '', '湖南省', '湖北省'],
+      dtype=object)
+</code></pre>
+<pre><code class="language-python">def process_province(x):
+    return x.split('省')[0]
+
+</code></pre>
+<pre><code class="language-python">city_mouse_data.loc[:,'省份'] = city_mouse_data['省份'].map(process_province)
+</code></pre>
+<p>检查省份数据</p>
+<pre><code class="language-python">city_mouse_data['省份'].unique()
+</code></pre>
+<pre><code>array(['广东', '河南', '浙江', '上海', '福建', '江苏', '山东', '北京', '河北', '安徽', '四川',
+       '辽宁', '湖南', '湖北', '海南', '重庆', '天津', '江西', ''], dtype=object)
+</code></pre>
+<pre><code class="language-python">city_info_table = create_compatitive_table_by(city_mouse_data, '省份')
+</code></pre>
+<pre><code class="language-python">show_compatitive(city_info_table)
+</code></pre>
+<p>​<br>
+<img src="output_138_0.png" alt="png" loading="lazy"><br>
+​</p>
+<p>上海、四川、广东、海南都是竞争度较低的省份，可以扩大规模</p>
+<pre><code class="language-python">physical_form_table = create_compatitive_table_by(mouse_data, '物理形态')
+</code></pre>
+<pre><code class="language-python">physical_form_table
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>预估销售额</th>
+      <th>预估销售额占比</th>
+      <th>宝贝数</th>
+      <th>单宝贝平均销售额</th>
+      <th>相对竞争度</th>
+    </tr>
+    <tr>
+      <th>物理形态</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5个1元硬币厚硬板</th>
+      <td>5226.00</td>
+      <td>0.000237</td>
+      <td>1</td>
+      <td>5226.000000</td>
+      <td>0.990482</td>
+    </tr>
+    <tr>
+      <th>8波段驱鼠器</th>
+      <td>108205.20</td>
+      <td>0.004902</td>
+      <td>1</td>
+      <td>108205.200000</td>
+      <td>0.797844</td>
+    </tr>
+    <tr>
+      <th>啫喱</th>
+      <td>643694.50</td>
+      <td>0.029164</td>
+      <td>40</td>
+      <td>16092.362500</td>
+      <td>0.970155</td>
+    </tr>
+    <tr>
+      <th>喷雾</th>
+      <td>275280.33</td>
+      <td>0.012472</td>
+      <td>6</td>
+      <td>45880.055000</td>
+      <td>0.914433</td>
+    </tr>
+    <tr>
+      <th>固体</th>
+      <td>19664620.40</td>
+      <td>0.890947</td>
+      <td>789</td>
+      <td>24923.473257</td>
+      <td>0.953635</td>
+    </tr>
+    <tr>
+      <th>声波</th>
+      <td>328.90</td>
+      <td>0.000015</td>
+      <td>1</td>
+      <td>328.900000</td>
+      <td>0.999642</td>
+    </tr>
+    <tr>
+      <th>服务</th>
+      <td>56160.00</td>
+      <td>0.002544</td>
+      <td>1</td>
+      <td>56160.000000</td>
+      <td>0.895202</td>
+    </tr>
+    <tr>
+      <th>气体</th>
+      <td>3253.18</td>
+      <td>0.000147</td>
+      <td>2</td>
+      <td>1626.590000</td>
+      <td>0.997215</td>
+    </tr>
+    <tr>
+      <th>油状</th>
+      <td>2341.60</td>
+      <td>0.000106</td>
+      <td>2</td>
+      <td>1170.800000</td>
+      <td>0.998068</td>
+    </tr>
+    <tr>
+      <th>液体</th>
+      <td>445113.50</td>
+      <td>0.020167</td>
+      <td>28</td>
+      <td>15896.910714</td>
+      <td>0.970520</td>
+    </tr>
+    <tr>
+      <th>粉状</th>
+      <td>329804.28</td>
+      <td>0.014942</td>
+      <td>14</td>
+      <td>23557.448571</td>
+      <td>0.956190</td>
+    </tr>
+    <tr>
+      <th>粘胶</th>
+      <td>235.20</td>
+      <td>0.000011</td>
+      <td>1</td>
+      <td>235.200000</td>
+      <td>0.999818</td>
+    </tr>
+    <tr>
+      <th>粘鼠板</th>
+      <td>413.90</td>
+      <td>0.000019</td>
+      <td>3</td>
+      <td>137.966667</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>胶板</th>
+      <td>1040.00</td>
+      <td>0.000047</td>
+      <td>1</td>
+      <td>1040.000000</td>
+      <td>0.998312</td>
+    </tr>
+    <tr>
+      <th>胶水</th>
+      <td>534713.60</td>
+      <td>0.024226</td>
+      <td>1</td>
+      <td>534713.600000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>胶水纸板</th>
+      <td>358.20</td>
+      <td>0.000016</td>
+      <td>1</td>
+      <td>358.200000</td>
+      <td>0.999588</td>
+    </tr>
+    <tr>
+      <th>胶状</th>
+      <td>275.50</td>
+      <td>0.000012</td>
+      <td>2</td>
+      <td>137.750000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>超声波物理驱鼠</th>
+      <td>536.00</td>
+      <td>0.000024</td>
+      <td>1</td>
+      <td>536.000000</td>
+      <td>0.999255</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">show_compatitive(physical_form_table)
+</code></pre>
+<p>​<br>
+<img src="output_142_0.png" alt="png" loading="lazy"><br>
+​</p>
+<p>8波段驱鼠器、胶水相对竞争度较低， 可以作为机会增长点做进一步扩大</p>
+<p>其他形式、其他子类市场，都可以做类似的筛选，再总结即可</p>
+<h2 id="竞品分析">竞品分析</h2>
+<pre><code class="language-python">root_path = './data/竞争数据/商品销售数据/'
+
+sales_data = pd.DataFrame()
+for file in os.listdir(root_path):
+    file_path = os.path.join(root_path, file)
+    df = pd.read_excel(file_path)
+    sales_data = pd.concat((sales_data, df), sort=False, ignore_index=True)
+</code></pre>
+<pre><code class="language-python">sales_data.columns
+</code></pre>
+<pre><code>Index(['序号', '店铺名称', '商品名称', '商品ID', '主图链接', '商品链接', '商品原价', '商品售价', '30天销售量',
+       '总销量', '类目', '适用对象', '30天销售额', '物理形态', '型号', '净含量'],
+      dtype='object')
+</code></pre>
+<pre><code class="language-python">features = ['店铺名称','商品ID','总销量','30天销售额','类目']
+sales_data_features = sales_data[features]
+sales_data_features
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>店铺名称</th>
+      <th>商品ID</th>
+      <th>总销量</th>
+      <th>30天销售额</th>
+      <th>类目</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>安速家居旗舰店</td>
+      <td>527032566392</td>
+      <td>236321</td>
+      <td>138176.0</td>
+      <td>灭鼠/杀虫剂</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>安速家居旗舰店</td>
+      <td>534230487113</td>
+      <td>10498</td>
+      <td>26401.7</td>
+      <td>灭鼠/杀虫剂</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>安速家居旗舰店</td>
+      <td>527797679530</td>
+      <td>117070</td>
+      <td>32082.7</td>
+      <td>灭鼠/杀虫剂</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>安速家居旗舰店</td>
+      <td>527113108079</td>
+      <td>55672</td>
+      <td>21430.5</td>
+      <td>灭鼠/杀虫剂</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>安速家居旗舰店</td>
+      <td>531350777813</td>
+      <td>19705</td>
+      <td>27168.0</td>
+      <td>灭鼠/杀虫剂</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>科凌虫控旗舰店</td>
+      <td>539005533029</td>
+      <td>2826</td>
+      <td>4309.0</td>
+      <td>灭鼠/杀虫剂</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>科凌虫控旗舰店</td>
+      <td>538635967358</td>
+      <td>1782</td>
+      <td>507.5</td>
+      <td>灭鼠/杀虫剂</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>科凌虫控旗舰店</td>
+      <td>534188548051</td>
+      <td>3086</td>
+      <td>1738.0</td>
+      <td>灭鼠/杀虫剂</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>科凌虫控旗舰店</td>
+      <td>536273648303</td>
+      <td>3085</td>
+      <td>178.2</td>
+      <td>灭鼠/杀虫剂</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>科凌虫控旗舰店</td>
+      <td>536126839304</td>
+      <td>425</td>
+      <td>118.8</td>
+      <td>灭鼠/杀虫剂</td>
+    </tr>
+  </tbody>
+</table>
+<p>87 rows × 5 columns</p>
+</div>
+<pre><code class="language-python">category_sales = pd.pivot_table(data=sales_data_features, 
+               index='店铺名称', columns='类目', 
+               values='30天销售额', aggfunc='sum')
+category_sales
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>类目</th>
+      <th>其它园艺用品</th>
+      <th>漱口水</th>
+      <th>灭鼠/杀虫剂</th>
+      <th>灭鼠笼/捕鼠器</th>
+      <th>空气芳香剂</th>
+      <th>空调清洁剂</th>
+      <th>蚊香液</th>
+      <th>蚊香片</th>
+    </tr>
+    <tr>
+      <th>店铺名称</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>安速家居旗舰店</th>
+      <td>NaN</td>
+      <td>9137.3</td>
+      <td>494539.3</td>
+      <td>NaN</td>
+      <td>4668.6</td>
+      <td>10420.9</td>
+      <td>24343.6</td>
+      <td>45.0</td>
+    </tr>
+    <tr>
+      <th>拜耳官方旗舰店</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2673315.2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>科凌虫控旗舰店</th>
+      <td>22880.0</td>
+      <td>NaN</td>
+      <td>3734597.0</td>
+      <td>62293.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">sns.set()
+plt.rcParams['font.sans-serif'] = 'SimHei'
+plt.rcParams['axes.unicode_minus'] = False
+</code></pre>
+<pre><code class="language-python">plt.figure(figsize=(12, 4))
+for i in range(category_sales.shape[0]):
+    ax = plt.subplot(1,3,i+1)
+    category_sales.iloc[i].plot(kind='pie', ax=ax)
+    plt.axis('equal')
+plt.suptitle('主要竞品的销售额占比分析')
+</code></pre>
+<pre><code>Text(0.5, 0.98, '主要竞品的销售额占比分析')
+</code></pre>
+<p>​<br>
+<img src="output_150_1.png" alt="png" loading="lazy"><br>
+​</p>
+<pre><code class="language-python">category_sales1 = pd.pivot_table(data=sales_data_features, 
+               index='店铺名称', columns='类目', 
+               values='总销量', aggfunc='sum')
+
+plt.figure(figsize=(12, 4))
+for i in range(category_sales1.shape[0]):
+    ax = plt.subplot(1,3,i+1)
+    category_sales.iloc[i].plot(kind='pie', ax=ax)
+    plt.axis('equal')
+plt.suptitle('主要竞品的销售量占比分析')
+</code></pre>
+<pre><code>Text(0.5, 0.98, '主要竞品的销售量占比分析')
+</code></pre>
+<p>​<br>
+<img src="output_151_1.png" alt="png" loading="lazy"><br>
+​</p>
+<p>三家竞品的产品组合基本一致</p>
+<h3 id="bcg矩阵-查看产品结构是否健康">BCG矩阵 查看产品结构是否健康</h3>
+<p>以拜尔官方旗舰店为例： 分析BCG结构</p>
+<pre><code class="language-python">baier = pd.read_excel('data/竞争数据/商品交易数据/拜耳全店商品交易数据.xlsx')
+baier
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>品牌</th>
+      <th>时间</th>
+      <th>商品</th>
+      <th>行业排名</th>
+      <th>交易指数</th>
+      <th>交易增长幅度</th>
+      <th>支付转化指数</th>
+      <th>操作</th>
+      <th>交易金额</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>拜耳</td>
+      <td>2018-07-01</td>
+      <td>德国拜耳拜灭士蟑螂药一窝端杀蟑胶饵灭蟑螂屋无毒克星家用全窝端</td>
+      <td>1</td>
+      <td>583483</td>
+      <td>0.0350</td>
+      <td>1500</td>
+      <td>趋势分析</td>
+      <td>9354158.37</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>拜耳</td>
+      <td>2018-07-01</td>
+      <td>进口蟑螂药一窝端德国拜耳拜灭士强力杀蟑胶饵蟑螂屋克星家用全窝</td>
+      <td>6</td>
+      <td>278542</td>
+      <td>0.1258</td>
+      <td>1194</td>
+      <td>趋势分析</td>
+      <td>2470202.91</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>拜耳</td>
+      <td>2018-07-01</td>
+      <td>德国拜耳进口蚂蚁药拜灭易灭蚁饵剂除杀蚂蚁杀虫剂家用室内全窝端</td>
+      <td>11</td>
+      <td>212329</td>
+      <td>0.5070</td>
+      <td>1328</td>
+      <td>趋势分析</td>
+      <td>1518114.06</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>拜耳</td>
+      <td>2018-07-01</td>
+      <td>进口蟑螂药德国拜耳拜灭士灭杀蟑胶饵剂粉屋克星全窝端12g家用</td>
+      <td>44</td>
+      <td>107697</td>
+      <td>-0.2044</td>
+      <td>1117</td>
+      <td>趋势分析</td>
+      <td>451897.06</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>拜耳</td>
+      <td>2018-07-01</td>
+      <td>德国拜耳 除敌跳蚤杀虫剂家用灭蟑螂药虱子杀潮虫臭虫除虫剂喷雾</td>
+      <td>45</td>
+      <td>105901</td>
+      <td>-0.2134</td>
+      <td>936</td>
+      <td>趋势分析</td>
+      <td>438583.74</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>137</th>
+      <td>拜耳</td>
+      <td>2018-11-01</td>
+      <td>德国拜耳上门除灭鼠灭白蚁蟑螂蚊子跳蚤苍蝇上海地区灭虫按件拍下</td>
+      <td>357</td>
+      <td>22585</td>
+      <td>2.4393</td>
+      <td>266</td>
+      <td>趋势分析</td>
+      <td>28969.28</td>
+    </tr>
+    <tr>
+      <th>138</th>
+      <td>拜耳</td>
+      <td>2018-11-01</td>
+      <td>德国拜耳丁香医生限量款拜灭士加量家用蟑螂全窝端蟑螂药3支装</td>
+      <td>385</td>
+      <td>21568</td>
+      <td>1.2793</td>
+      <td>751</td>
+      <td>趋势分析</td>
+      <td>26742.75</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>拜耳</td>
+      <td>2018-11-01</td>
+      <td>德国进口拜耳蟑螂药拜灭士杀蟑胶饵5g两盒套装全窝端杀灭蟑螂剂屋</td>
+      <td>418</td>
+      <td>20221</td>
+      <td>-0.3242</td>
+      <td>679</td>
+      <td>趋势分析</td>
+      <td>23913.53</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>拜耳</td>
+      <td>2018-11-01</td>
+      <td>拜耳灭蚂蚁药家用一窝端室内室外用杀小黄红蚂蚁药神器胶饵拜灭易</td>
+      <td>437</td>
+      <td>19549</td>
+      <td>7.4427</td>
+      <td>1612</td>
+      <td>趋势分析</td>
+      <td>22553.62</td>
+    </tr>
+    <tr>
+      <th>141</th>
+      <td>拜耳</td>
+      <td>2018-11-01</td>
+      <td>蟑螂药拜耳拜灭士杀蟑胶饵强力灭蟑清贴捕捉器蟑螂克星家用全窝端</td>
+      <td>451</td>
+      <td>19027</td>
+      <td>0.8653</td>
+      <td>1619</td>
+      <td>趋势分析</td>
+      <td>21521.16</td>
+    </tr>
+  </tbody>
+</table>
+<p>142 rows × 9 columns</p>
+</div>
+<pre><code class="language-python"># 计算各商品的销售总额
+sales_sum = baier.groupby('商品')['交易金额'].sum()
+sales_sum
+</code></pre>
+<pre><code>商品
+17年德国拜耳进口蚂蚁药拜灭易灭蚁饵剂粉除杀蚂蚁杀虫剂全窝端            42340.55
+德国原装进口拜耳蟑螂药全窝端拜灭士5g+12g杀蟑胶饵剂粉屋捕捉器        197377.17
+德国拜耳 除敌跳蚤杀虫剂家用灭蟑螂药虱子杀潮虫臭虫除虫剂喷雾          1394780.59
+德国拜耳丁香医生限量款拜灭士加量家用蟑螂全窝端蟑螂药3支装             26742.75
+德国拜耳上门除灭鼠灭白蚁蟑螂蚊子跳蚤苍蝇上海地区灭虫按件拍下            28969.28
+德国拜耳拜灭士5g+拜灭易12g进口杀蟑螂蚂蚁药蟑螂克星家用全窝端        251225.58
+德国拜耳拜灭士5g+除敌5ml*4支进口蟑螂药家用全窝端杀蟑螂套装       1484952.41
+德国拜耳拜灭士蟑螂药一窝端杀蟑胶饵灭蟑螂屋无毒克星家用全窝端         40103850.97
+德国拜耳拜灭士蟑螂药一窝端进口全窝端家用灭除杀蟑胶饵5g包邮           236386.32
+德国拜耳拜灭易12g+除敌5ml*4支 进口蚂蚁药全窝端家用杀虫剂组合       89566.01
+德国拜耳拜灭易灭蚁饵剂粉除杀防蚂蚁药杀虫剂全窝端家用室内花园          1520126.15
+德国拜耳拜灭易进口蚂蚁药一窝端灭蚁饵剂清除蚂蚁粉家用全窝端             32246.39
+德国拜耳白蚁药杀虫剂全窝端家用除杀防治灭飞蚂蚁特密得预防装修            55113.41
+德国拜耳蟑螂药拜灭士杀蟑胶饵蟑螂克星全窝端家用灭蟑加量装12g           68699.06
+德国拜耳跳蚤杀虫剂家用潮虫灭蛾蚋虱子臭虫药除蟑螂5ml*4            318059.43
+德国拜耳进口白蚁药除灭防杀白蚁杀虫剂全窝端家用特傚触杀型粉药           564169.77
+德国拜耳进口蚂蚁药家用拜灭易灭蚁饵剂杀蚂蚁杀虫剂室内全窝端蚁           214998.61
+德国拜耳进口蚂蚁药拜灭易灭蚁饵剂除杀蚂蚁无毒家用室内全窝端             93400.98
+德国拜耳进口蚂蚁药拜灭易灭蚁饵剂除杀蚂蚁杀虫剂家用室内全窝端          6130488.42
+德国拜耳除敌杀虫剂灭蚊蟑螂蚂蚁药跳蚤苍蝇臭虫除螨虱子家用             393582.71
+德国拜耳除敌杀虫剂灭蟑螂药跳蚤苍蝇臭虫除螨虱子喷雾5ml*8           983199.69
+德国进口拜耳蟑螂药拜灭士杀灭除蟑胶饵剂粉屋家用全窝端12g*2盒          28605.01
+德国进口拜耳蟑螂药拜灭士杀蟑胶饵5g两盒套装全窝端杀灭蟑螂剂屋          189376.20
+必抢 德国进口拜耳蟑螂克星家用小强全窝端蟑螂药杀蟑胶饵灭蟑17g         561689.93
+拜灭士蟑螂药蟑螂克星家用无毒强力灭蟑清德国拜耳杀蟑饵剂全窝端           140032.47
+拜耳拜灭士 蟑螂药家用全窝端 强力灭除厨房蟑螂屋克星杀德国进口          413902.42
+拜耳灭蚂蚁药家用一窝端室内室外用杀小黄红蚂蚁药神器胶饵拜灭易            22553.62
+拜耳蟑螂药一窝端家用拜灭士杀蟑胶饵德国小强药粉灭蟑螂厨房克星           695372.27
+电子猫超声波驱鼠器家用大功率灭鼠防鼠赶老鼠夹药捕鼠干扰粘鼠板            41046.03
+蟑螂药30克拜灭士德国拜耳进口安全灭蟑螂杀蟑胶饵颗粒剂传染传毒          221081.46
+蟑螂药一窝端德国拜耳拜灭士除蟑灭杀蟑螂克星全窝端家用杀蟑胶           2976922.63
+蟑螂药德国拜耳拜灭士强力除杀蟑螂克星胶饵屋家用捕捉器贴全窝端          1198694.67
+蟑螂药拜耳拜灭士杀蟑胶饵强力灭蟑清贴捕捉器蟑螂克星家用全窝端            55395.16
+蟑螂药进口德国拜耳拜灭士家用除杀蟑螂屋胶饵捕捉器强力清全窝端           101079.33
+进口拜耳蚂蚁药家用花园灭蚁饵剂拜灭易除杀蚂蚁杀虫剂室内全窝端           108487.45
+进口蚂蚁药德国拜耳拜灭易杀蚁胶饵灭蚁饵剂红黑黄蚂蚁全窝端家用            33514.83
+进口蟑螂药 德国拜耳拜灭士家用杀蟑螂胶饵捕捉器蟑螂屋粉全窝端           582636.66
+进口蟑螂药 德国拜耳拜灭士杀蟑胶饵灭蟑螂屋贴捕捉器全窝端家用           185691.26
+进口蟑螂药 德国拜耳拜灭士杀蟑螂胶饵剂33克灭蟑螂药全窝端家用          143883.32
+进口蟑螂药一窝端德国拜耳拜灭士强力杀蟑胶饵蟑螂屋克星家用全窝         13617307.87
+进口蟑螂药一窝端德国拜耳拜灭士杀蟑胶饵诱防蟑螂屋全窝端5+12g          67043.14
+进口蟑螂药德国拜耳拜灭士杀蟑胶饵蟑螂克星全窝端家用灭蟑屋12g         1650681.34
+进口蟑螂药德国拜耳拜灭士灭杀蟑胶饵剂粉屋克星全窝端12g家用          3589799.54
+预售德国拜耳进口蟑螂药进口蚂蚁药组合装5g+12g                 85546.09
+Name: 交易金额, dtype: float64
+</code></pre>
+<pre><code class="language-python"># 计算各商品的销售总额占比
+sales_pct = sales_sum/sales_sum.sum()
+sales_pct
+</code></pre>
+<pre><code>商品
+17年德国拜耳进口蚂蚁药拜灭易灭蚁饵剂粉除杀蚂蚁杀虫剂全窝端         0.000523
+德国原装进口拜耳蟑螂药全窝端拜灭士5g+12g杀蟑胶饵剂粉屋捕捉器      0.002439
+德国拜耳 除敌跳蚤杀虫剂家用灭蟑螂药虱子杀潮虫臭虫除虫剂喷雾         0.017232
+德国拜耳丁香医生限量款拜灭士加量家用蟑螂全窝端蟑螂药3支装          0.000330
+德国拜耳上门除灭鼠灭白蚁蟑螂蚊子跳蚤苍蝇上海地区灭虫按件拍下         0.000358
+德国拜耳拜灭士5g+拜灭易12g进口杀蟑螂蚂蚁药蟑螂克星家用全窝端      0.003104
+德国拜耳拜灭士5g+除敌5ml*4支进口蟑螂药家用全窝端杀蟑螂套装      0.018346
+德国拜耳拜灭士蟑螂药一窝端杀蟑胶饵灭蟑螂屋无毒克星家用全窝端         0.495473
+德国拜耳拜灭士蟑螂药一窝端进口全窝端家用灭除杀蟑胶饵5g包邮         0.002920
+德国拜耳拜灭易12g+除敌5ml*4支 进口蚂蚁药全窝端家用杀虫剂组合    0.001107
+德国拜耳拜灭易灭蚁饵剂粉除杀防蚂蚁药杀虫剂全窝端家用室内花园         0.018781
+德国拜耳拜灭易进口蚂蚁药一窝端灭蚁饵剂清除蚂蚁粉家用全窝端          0.000398
+德国拜耳白蚁药杀虫剂全窝端家用除杀防治灭飞蚂蚁特密得预防装修         0.000681
+德国拜耳蟑螂药拜灭士杀蟑胶饵蟑螂克星全窝端家用灭蟑加量装12g        0.000849
+德国拜耳跳蚤杀虫剂家用潮虫灭蛾蚋虱子臭虫药除蟑螂5ml*4          0.003930
+德国拜耳进口白蚁药除灭防杀白蚁杀虫剂全窝端家用特傚触杀型粉药         0.006970
+德国拜耳进口蚂蚁药家用拜灭易灭蚁饵剂杀蚂蚁杀虫剂室内全窝端蚁         0.002656
+德国拜耳进口蚂蚁药拜灭易灭蚁饵剂除杀蚂蚁无毒家用室内全窝端          0.001154
+德国拜耳进口蚂蚁药拜灭易灭蚁饵剂除杀蚂蚁杀虫剂家用室内全窝端         0.075741
+德国拜耳除敌杀虫剂灭蚊蟑螂蚂蚁药跳蚤苍蝇臭虫除螨虱子家用           0.004863
+德国拜耳除敌杀虫剂灭蟑螂药跳蚤苍蝇臭虫除螨虱子喷雾5ml*8         0.012147
+德国进口拜耳蟑螂药拜灭士杀灭除蟑胶饵剂粉屋家用全窝端12g*2盒       0.000353
+德国进口拜耳蟑螂药拜灭士杀蟑胶饵5g两盒套装全窝端杀灭蟑螂剂屋        0.002340
+必抢 德国进口拜耳蟑螂克星家用小强全窝端蟑螂药杀蟑胶饵灭蟑17g       0.006940
+拜灭士蟑螂药蟑螂克星家用无毒强力灭蟑清德国拜耳杀蟑饵剂全窝端         0.001730
+拜耳拜灭士 蟑螂药家用全窝端 强力灭除厨房蟑螂屋克星杀德国进口        0.005114
+拜耳灭蚂蚁药家用一窝端室内室外用杀小黄红蚂蚁药神器胶饵拜灭易         0.000279
+拜耳蟑螂药一窝端家用拜灭士杀蟑胶饵德国小强药粉灭蟑螂厨房克星         0.008591
+电子猫超声波驱鼠器家用大功率灭鼠防鼠赶老鼠夹药捕鼠干扰粘鼠板         0.000507
+蟑螂药30克拜灭士德国拜耳进口安全灭蟑螂杀蟑胶饵颗粒剂传染传毒        0.002731
+蟑螂药一窝端德国拜耳拜灭士除蟑灭杀蟑螂克星全窝端家用杀蟑胶          0.036779
+蟑螂药德国拜耳拜灭士强力除杀蟑螂克星胶饵屋家用捕捉器贴全窝端         0.014810
+蟑螂药拜耳拜灭士杀蟑胶饵强力灭蟑清贴捕捉器蟑螂克星家用全窝端         0.000684
+蟑螂药进口德国拜耳拜灭士家用除杀蟑螂屋胶饵捕捉器强力清全窝端         0.001249
+进口拜耳蚂蚁药家用花园灭蚁饵剂拜灭易除杀蚂蚁杀虫剂室内全窝端         0.001340
+进口蚂蚁药德国拜耳拜灭易杀蚁胶饵灭蚁饵剂红黑黄蚂蚁全窝端家用         0.000414
+进口蟑螂药 德国拜耳拜灭士家用杀蟑螂胶饵捕捉器蟑螂屋粉全窝端         0.007198
+进口蟑螂药 德国拜耳拜灭士杀蟑胶饵灭蟑螂屋贴捕捉器全窝端家用         0.002294
+进口蟑螂药 德国拜耳拜灭士杀蟑螂胶饵剂33克灭蟑螂药全窝端家用        0.001778
+进口蟑螂药一窝端德国拜耳拜灭士强力杀蟑胶饵蟑螂屋克星家用全窝         0.168238
+进口蟑螂药一窝端德国拜耳拜灭士杀蟑胶饵诱防蟑螂屋全窝端5+12g       0.000828
+进口蟑螂药德国拜耳拜灭士杀蟑胶饵蟑螂克星全窝端家用灭蟑屋12g        0.020394
+进口蟑螂药德国拜耳拜灭士灭杀蟑胶饵剂粉屋克星全窝端12g家用         0.044351
+预售德国拜耳进口蟑螂药进口蚂蚁药组合装5g+12g              0.001057
+Name: 交易金额, dtype: float64
+</code></pre>
+<h3 id="平均增长率公式">平均增长率公式</h3>
+<figure data-type="image" tabindex="9"><img src="attachment:image.png" alt="image.png" loading="lazy"></figure>
+<p>n 是期数</p>
+<p>ai 第i期的增长幅度</p>
+<pre><code class="language-python">baier.sort_values(['商品','交易增长幅度'])
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>品牌</th>
+      <th>时间</th>
+      <th>商品</th>
+      <th>行业排名</th>
+      <th>交易指数</th>
+      <th>交易增长幅度</th>
+      <th>支付转化指数</th>
+      <th>操作</th>
+      <th>交易金额</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>22</th>
+      <td>拜耳</td>
+      <td>2018-07-01</td>
+      <td>17年德国拜耳进口蚂蚁药拜灭易灭蚁饵剂粉除杀蚂蚁杀虫剂全窝端</td>
+      <td>377</td>
+      <td>28090</td>
+      <td>-0.2476</td>
+      <td>1063</td>
+      <td>趋势分析</td>
+      <td>42340.55</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>拜耳</td>
+      <td>2018-07-01</td>
+      <td>德国原装进口拜耳蟑螂药全窝端拜灭士5g+12g杀蟑胶饵剂粉屋捕捉器</td>
+      <td>275</td>
+      <td>34953</td>
+      <td>-0.3665</td>
+      <td>782</td>
+      <td>趋势分析</td>
+      <td>62023.73</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>拜耳</td>
+      <td>2018-09-01</td>
+      <td>德国原装进口拜耳蟑螂药全窝端拜灭士5g+12g杀蟑胶饵剂粉屋捕捉器</td>
+      <td>274</td>
+      <td>34047</td>
+      <td>-0.2218</td>
+      <td>801</td>
+      <td>趋势分析</td>
+      <td>59238.66</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>拜耳</td>
+      <td>2018-08-01</td>
+      <td>德国原装进口拜耳蟑螂药全窝端拜灭士5g+12g杀蟑胶饵剂粉屋捕捉器</td>
+      <td>234</td>
+      <td>39287</td>
+      <td>0.2273</td>
+      <td>806</td>
+      <td>趋势分析</td>
+      <td>76114.78</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>拜耳</td>
+      <td>2018-10-01</td>
+      <td>德国拜耳 除敌跳蚤杀虫剂家用灭蟑螂药虱子杀潮虫臭虫除虫剂喷雾</td>
+      <td>117</td>
+      <td>57373</td>
+      <td>-0.4751</td>
+      <td>936</td>
+      <td>趋势分析</td>
+      <td>148130.75</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>拜耳</td>
+      <td>2018-07-01</td>
+      <td>进口蟑螂药德国拜耳拜灭士灭杀蟑胶饵剂粉屋克星全窝端12g家用</td>
+      <td>44</td>
+      <td>107697</td>
+      <td>-0.2044</td>
+      <td>1117</td>
+      <td>趋势分析</td>
+      <td>451897.06</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>拜耳</td>
+      <td>2018-09-01</td>
+      <td>进口蟑螂药德国拜耳拜灭士灭杀蟑胶饵剂粉屋克星全窝端12g家用</td>
+      <td>14</td>
+      <td>179897</td>
+      <td>0.3642</td>
+      <td>1205</td>
+      <td>趋势分析</td>
+      <td>1128379.43</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>拜耳</td>
+      <td>2018-08-01</td>
+      <td>进口蟑螂药德国拜耳拜灭士灭杀蟑胶饵剂粉屋克星全窝端12g家用</td>
+      <td>27</td>
+      <td>151197</td>
+      <td>0.8303</td>
+      <td>1204</td>
+      <td>趋势分析</td>
+      <td>827141.60</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>拜耳</td>
+      <td>2018-09-01</td>
+      <td>预售德国拜耳进口蟑螂药进口蚂蚁药组合装5g+12g</td>
+      <td>372</td>
+      <td>27417</td>
+      <td>-0.0973</td>
+      <td>836</td>
+      <td>趋势分析</td>
+      <td>40588.32</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>拜耳</td>
+      <td>2018-08-01</td>
+      <td>预售德国拜耳进口蟑螂药进口蚂蚁药组合装5g+12g</td>
+      <td>357</td>
+      <td>29073</td>
+      <td>0.5336</td>
+      <td>700</td>
+      <td>趋势分析</td>
+      <td>44957.77</td>
+    </tr>
+  </tbody>
+</table>
+<p>142 rows × 9 columns</p>
+</div>
+<pre><code class="language-python">temp = baier.loc[baier['商品'] == '德国原装进口拜耳蟑螂药全窝端拜灭士5g+12g杀蟑胶饵剂粉屋捕捉器']
+</code></pre>
+<pre><code class="language-python">n = temp['交易增长幅度'].size
+
+prod = 1
+for a in temp['交易增长幅度'].values:
+    prod *= (1+a)
+    
+increatment_rate = np.power(prod, 1/n) - 1
+increatment_rate
+</code></pre>
+<pre><code>-0.15420938866622647
+</code></pre>
+<pre><code class="language-python">temp['交易增长幅度']
+</code></pre>
+<pre><code>19   -0.3665
+41    0.2273
+76   -0.2218
+Name: 交易增长幅度, dtype: float64
+</code></pre>
+<pre><code class="language-python"># 计算平均增长率的函数
+def increatment_rate(x):
+    prod = 1
+    for a in x.values:
+        prod *= (1+a)
+    return np.power(prod, 1/x.size) - 1
+</code></pre>
+<pre><code class="language-python">def test_function(x):
+    print(x)
+    print('------------------------------------------')
+</code></pre>
+<pre><code class="language-python">avg_increate_rate = baier.groupby('商品')['交易增长幅度'].apply(increatment_rate)
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
+<pre><code class="language-python">avg_increate_rate.size,sales_pct.size,sales_sum.size
+</code></pre>
+<pre><code>(44, 44, 44)
+</code></pre>
+<p>整理</p>
+<pre><code class="language-python">result = pd.concat((sales_sum, sales_pct, avg_increate_rate), axis=1)
+result.columns = ['交易金额','交易额占比','平均增长率']
+result
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>交易金额</th>
+      <th>交易额占比</th>
+      <th>平均增长率</th>
+    </tr>
+    <tr>
+      <th>商品</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>17年德国拜耳进口蚂蚁药拜灭易灭蚁饵剂粉除杀蚂蚁杀虫剂全窝端</th>
+      <td>42340.55</td>
+      <td>0.000523</td>
+      <td>-0.247600</td>
+    </tr>
+    <tr>
+      <th>德国原装进口拜耳蟑螂药全窝端拜灭士5g+12g杀蟑胶饵剂粉屋捕捉器</th>
+      <td>197377.17</td>
+      <td>0.002439</td>
+      <td>-0.154209</td>
+    </tr>
+    <tr>
+      <th>德国拜耳 除敌跳蚤杀虫剂家用灭蟑螂药虱子杀潮虫臭虫除虫剂喷雾</th>
+      <td>1394780.59</td>
+      <td>0.017232</td>
+      <td>-0.236978</td>
+    </tr>
+    <tr>
+      <th>德国拜耳丁香医生限量款拜灭士加量家用蟑螂全窝端蟑螂药3支装</th>
+      <td>26742.75</td>
+      <td>0.000330</td>
+      <td>1.279300</td>
+    </tr>
+    <tr>
+      <th>德国拜耳上门除灭鼠灭白蚁蟑螂蚊子跳蚤苍蝇上海地区灭虫按件拍下</th>
+      <td>28969.28</td>
+      <td>0.000358</td>
+      <td>2.439300</td>
+    </tr>
+    <tr>
+      <th>德国拜耳拜灭士5g+拜灭易12g进口杀蟑螂蚂蚁药蟑螂克星家用全窝端</th>
+      <td>251225.58</td>
+      <td>0.003104</td>
+      <td>-0.088763</td>
+    </tr>
+    <tr>
+      <th>德国拜耳拜灭士5g+除敌5ml*4支进口蟑螂药家用全窝端杀蟑螂套装</th>
+      <td>1484952.41</td>
+      <td>0.018346</td>
+      <td>0.342020</td>
+    </tr>
+    <tr>
+      <th>德国拜耳拜灭士蟑螂药一窝端杀蟑胶饵灭蟑螂屋无毒克星家用全窝端</th>
+      <td>40103850.97</td>
+      <td>0.495473</td>
+      <td>-0.149060</td>
+    </tr>
+    <tr>
+      <th>德国拜耳拜灭士蟑螂药一窝端进口全窝端家用灭除杀蟑胶饵5g包邮</th>
+      <td>236386.32</td>
+      <td>0.002920</td>
+      <td>29.260600</td>
+    </tr>
+    <tr>
+      <th>德国拜耳拜灭易12g+除敌5ml*4支 进口蚂蚁药全窝端家用杀虫剂组合</th>
+      <td>89566.01</td>
+      <td>0.001107</td>
+      <td>0.417571</td>
+    </tr>
+    <tr>
+      <th>德国拜耳拜灭易灭蚁饵剂粉除杀防蚂蚁药杀虫剂全窝端家用室内花园</th>
+      <td>1520126.15</td>
+      <td>0.018781</td>
+      <td>-0.081254</td>
+    </tr>
+    <tr>
+      <th>德国拜耳拜灭易进口蚂蚁药一窝端灭蚁饵剂清除蚂蚁粉家用全窝端</th>
+      <td>32246.39</td>
+      <td>0.000398</td>
+      <td>7.867000</td>
+    </tr>
+    <tr>
+      <th>德国拜耳白蚁药杀虫剂全窝端家用除杀防治灭飞蚂蚁特密得预防装修</th>
+      <td>55113.41</td>
+      <td>0.000681</td>
+      <td>5.023800</td>
+    </tr>
+    <tr>
+      <th>德国拜耳蟑螂药拜灭士杀蟑胶饵蟑螂克星全窝端家用灭蟑加量装12g</th>
+      <td>68699.06</td>
+      <td>0.000849</td>
+      <td>1.030066</td>
+    </tr>
+    <tr>
+      <th>德国拜耳跳蚤杀虫剂家用潮虫灭蛾蚋虱子臭虫药除蟑螂5ml*4</th>
+      <td>318059.43</td>
+      <td>0.003930</td>
+      <td>-0.025832</td>
+    </tr>
+    <tr>
+      <th>德国拜耳进口白蚁药除灭防杀白蚁杀虫剂全窝端家用特傚触杀型粉药</th>
+      <td>564169.77</td>
+      <td>0.006970</td>
+      <td>-0.256507</td>
+    </tr>
+    <tr>
+      <th>德国拜耳进口蚂蚁药家用拜灭易灭蚁饵剂杀蚂蚁杀虫剂室内全窝端蚁</th>
+      <td>214998.61</td>
+      <td>0.002656</td>
+      <td>-0.085305</td>
+    </tr>
+    <tr>
+      <th>德国拜耳进口蚂蚁药拜灭易灭蚁饵剂除杀蚂蚁无毒家用室内全窝端</th>
+      <td>93400.98</td>
+      <td>0.001154</td>
+      <td>0.044624</td>
+    </tr>
+    <tr>
+      <th>德国拜耳进口蚂蚁药拜灭易灭蚁饵剂除杀蚂蚁杀虫剂家用室内全窝端</th>
+      <td>6130488.42</td>
+      <td>0.075741</td>
+      <td>-0.145091</td>
+    </tr>
+    <tr>
+      <th>德国拜耳除敌杀虫剂灭蚊蟑螂蚂蚁药跳蚤苍蝇臭虫除螨虱子家用</th>
+      <td>393582.71</td>
+      <td>0.004863</td>
+      <td>-0.124094</td>
+    </tr>
+    <tr>
+      <th>德国拜耳除敌杀虫剂灭蟑螂药跳蚤苍蝇臭虫除螨虱子喷雾5ml*8</th>
+      <td>983199.69</td>
+      <td>0.012147</td>
+      <td>0.170093</td>
+    </tr>
+    <tr>
+      <th>德国进口拜耳蟑螂药拜灭士杀灭除蟑胶饵剂粉屋家用全窝端12g*2盒</th>
+      <td>28605.01</td>
+      <td>0.000353</td>
+      <td>0.586000</td>
+    </tr>
+    <tr>
+      <th>德国进口拜耳蟑螂药拜灭士杀蟑胶饵5g两盒套装全窝端杀灭蟑螂剂屋</th>
+      <td>189376.20</td>
+      <td>0.002340</td>
+      <td>0.054880</td>
+    </tr>
+    <tr>
+      <th>必抢 德国进口拜耳蟑螂克星家用小强全窝端蟑螂药杀蟑胶饵灭蟑17g</th>
+      <td>561689.93</td>
+      <td>0.006940</td>
+      <td>-0.391422</td>
+    </tr>
+    <tr>
+      <th>拜灭士蟑螂药蟑螂克星家用无毒强力灭蟑清德国拜耳杀蟑饵剂全窝端</th>
+      <td>140032.47</td>
+      <td>0.001730</td>
+      <td>0.970033</td>
+    </tr>
+    <tr>
+      <th>拜耳拜灭士 蟑螂药家用全窝端 强力灭除厨房蟑螂屋克星杀德国进口</th>
+      <td>413902.42</td>
+      <td>0.005114</td>
+      <td>0.342553</td>
+    </tr>
+    <tr>
+      <th>拜耳灭蚂蚁药家用一窝端室内室外用杀小黄红蚂蚁药神器胶饵拜灭易</th>
+      <td>22553.62</td>
+      <td>0.000279</td>
+      <td>7.442700</td>
+    </tr>
+    <tr>
+      <th>拜耳蟑螂药一窝端家用拜灭士杀蟑胶饵德国小强药粉灭蟑螂厨房克星</th>
+      <td>695372.27</td>
+      <td>0.008591</td>
+      <td>-0.069167</td>
+    </tr>
+    <tr>
+      <th>电子猫超声波驱鼠器家用大功率灭鼠防鼠赶老鼠夹药捕鼠干扰粘鼠板</th>
+      <td>41046.03</td>
+      <td>0.000507</td>
+      <td>1030.000000</td>
+    </tr>
+    <tr>
+      <th>蟑螂药30克拜灭士德国拜耳进口安全灭蟑螂杀蟑胶饵颗粒剂传染传毒</th>
+      <td>221081.46</td>
+      <td>0.002731</td>
+      <td>-0.140822</td>
+    </tr>
+    <tr>
+      <th>蟑螂药一窝端德国拜耳拜灭士除蟑灭杀蟑螂克星全窝端家用杀蟑胶</th>
+      <td>2976922.63</td>
+      <td>0.036779</td>
+      <td>-0.072881</td>
+    </tr>
+    <tr>
+      <th>蟑螂药德国拜耳拜灭士强力除杀蟑螂克星胶饵屋家用捕捉器贴全窝端</th>
+      <td>1198694.67</td>
+      <td>0.014810</td>
+      <td>-0.097960</td>
+    </tr>
+    <tr>
+      <th>蟑螂药拜耳拜灭士杀蟑胶饵强力灭蟑清贴捕捉器蟑螂克星家用全窝端</th>
+      <td>55395.16</td>
+      <td>0.000684</td>
+      <td>0.502894</td>
+    </tr>
+    <tr>
+      <th>蟑螂药进口德国拜耳拜灭士家用除杀蟑螂屋胶饵捕捉器强力清全窝端</th>
+      <td>101079.33</td>
+      <td>0.001249</td>
+      <td>1.279586</td>
+    </tr>
+    <tr>
+      <th>进口拜耳蚂蚁药家用花园灭蚁饵剂拜灭易除杀蚂蚁杀虫剂室内全窝端</th>
+      <td>108487.45</td>
+      <td>0.001340</td>
+      <td>-0.090902</td>
+    </tr>
+    <tr>
+      <th>进口蚂蚁药德国拜耳拜灭易杀蚁胶饵灭蚁饵剂红黑黄蚂蚁全窝端家用</th>
+      <td>33514.83</td>
+      <td>0.000414</td>
+      <td>0.742200</td>
+    </tr>
+    <tr>
+      <th>进口蟑螂药 德国拜耳拜灭士家用杀蟑螂胶饵捕捉器蟑螂屋粉全窝端</th>
+      <td>582636.66</td>
+      <td>0.007198</td>
+      <td>-0.193162</td>
+    </tr>
+    <tr>
+      <th>进口蟑螂药 德国拜耳拜灭士杀蟑胶饵灭蟑螂屋贴捕捉器全窝端家用</th>
+      <td>185691.26</td>
+      <td>0.002294</td>
+      <td>-0.065099</td>
+    </tr>
+    <tr>
+      <th>进口蟑螂药 德国拜耳拜灭士杀蟑螂胶饵剂33克灭蟑螂药全窝端家用</th>
+      <td>143883.32</td>
+      <td>0.001778</td>
+      <td>0.038756</td>
+    </tr>
+    <tr>
+      <th>进口蟑螂药一窝端德国拜耳拜灭士强力杀蟑胶饵蟑螂屋克星家用全窝</th>
+      <td>13617307.87</td>
+      <td>0.168238</td>
+      <td>-0.093715</td>
+    </tr>
+    <tr>
+      <th>进口蟑螂药一窝端德国拜耳拜灭士杀蟑胶饵诱防蟑螂屋全窝端5+12g</th>
+      <td>67043.14</td>
+      <td>0.000828</td>
+      <td>31.218500</td>
+    </tr>
+    <tr>
+      <th>进口蟑螂药德国拜耳拜灭士杀蟑胶饵蟑螂克星全窝端家用灭蟑屋12g</th>
+      <td>1650681.34</td>
+      <td>0.020394</td>
+      <td>-0.186351</td>
+    </tr>
+    <tr>
+      <th>进口蟑螂药德国拜耳拜灭士灭杀蟑胶饵剂粉屋克星全窝端12g家用</th>
+      <td>3589799.54</td>
+      <td>0.044351</td>
+      <td>-0.019072</td>
+    </tr>
+    <tr>
+      <th>预售德国拜耳进口蟑螂药进口蚂蚁药组合装5g+12g</th>
+      <td>85546.09</td>
+      <td>0.001057</td>
+      <td>0.176597</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">import warnings
+warnings.filterwarnings('ignore')
+</code></pre>
+<pre><code class="language-python">for col in result.columns:
+    col_data = result[col]
+    sns.distplot(col_data)
+    plt.show()
+</code></pre>
+<p>​<br>
+<img src="output_172_0.png" alt="png" loading="lazy"><br>
+​</p>
+<figure data-type="image" tabindex="10"><img src="output_172_1.png" alt="png" loading="lazy"></figure>
+<figure data-type="image" tabindex="11"><img src="output_172_2.png" alt="png" loading="lazy"></figure>
+<pre><code class="language-python">result.loc[result['平均增长率'] &lt; 25].plot(kind='scatter', x='交易额占比', y='平均增长率')
+</code></pre>
+<pre><code>*c* argument looks like a single numeric RGB or RGBA sequence, which should be avoided as value-mapping will have precedence in case its length matches with *x* &amp; *y*.  Please use the *color* keyword-argument or provide a 2-D array with a single row if you intend to specify the same RGB or RGBA value for all points.
+
+
+
+
+
+&lt;AxesSubplot:xlabel='交易额占比', ylabel='平均增长率'&gt;
+</code></pre>
+<p>​<br>
+<img src="output_173_2.png" alt="png" loading="lazy"><br>
+​</p>
+<pre><code class="language-python">result['交易额占比'].median()*10
+</code></pre>
+<pre><code>0.025473970013420555
+</code></pre>
+<pre><code class="language-python">(result.query(&quot;平均增长率 &lt; 25 &amp; 交易额占比 &lt; 0.4&quot;)*10).plot(kind='scatter', x='交易额占比', y='平均增长率', s=100, color=np.random.random(size=(40, 3)))
+plt.xlim([-1 ,2])
+plt.ylim([-5, 8])
+
+# 绘制分割线
+plt.plot(np.linspace(-1, 2, 100), [1]*100)
+plt.plot([result['交易额占比'].median()*10]*100, np.linspace(-5, 8, 100))
+</code></pre>
+<pre><code>[&lt;matplotlib.lines.Line2D at 0x15b06bbea90&gt;]
+</code></pre>
+<p>​<br>
+<img src="output_175_1.png" alt="png" loading="lazy"><br>
+​</p>
+<pre><code class="language-python">plt.scatter(result['交易额占比'], result['平均增长率'])
+</code></pre>
+<pre><code>&lt;matplotlib.collections.PathCollection at 0x15b055b0b50&gt;
+</code></pre>
+<p>​<br>
+<img src="output_176_1.png" alt="png" loading="lazy"><br>
+​</p>
+<h2 id="流量分析">流量分析</h2>
+<pre><code class="language-python">flow_data = pd.DataFrame()
+
+for file in os.listdir('data/竞争数据/流量渠道数据'):
+    file_path = os.path.join('data/竞争数据/流量渠道数据',file)
+    df = pd.read_excel(file_path)
+    brank = file.split('旗舰店')[0]
+    df['brank'] = brank
+    flow_data = pd.concat((flow_data, df), sort=False, ignore_index=True)
+</code></pre>
+<pre><code class="language-python">del flow_data['Unnamed: 2']
+</code></pre>
+<pre><code class="language-python">flow_data
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>流量来源</th>
+      <th>交易指数</th>
+      <th>brank</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>淘内免费</td>
+      <td>119751</td>
+      <td>安速家居</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>手淘搜索</td>
+      <td>86389</td>
+      <td>安速家居</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>淘内免费其他</td>
+      <td>62653</td>
+      <td>安速家居</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>手淘问大家</td>
+      <td>31348</td>
+      <td>安速家居</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>手淘旺信</td>
+      <td>25514</td>
+      <td>安速家居</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>793</th>
+      <td>米折</td>
+      <td>0</td>
+      <td>科凌虫控</td>
+    </tr>
+    <tr>
+      <th>794</th>
+      <td>淘粉吧</td>
+      <td>0</td>
+      <td>科凌虫控</td>
+    </tr>
+    <tr>
+      <th>795</th>
+      <td>其它来源</td>
+      <td>0</td>
+      <td>科凌虫控</td>
+    </tr>
+    <tr>
+      <th>796</th>
+      <td>其它来源</td>
+      <td>0</td>
+      <td>科凌虫控</td>
+    </tr>
+    <tr>
+      <th>797</th>
+      <td>站外投放</td>
+      <td>0</td>
+      <td>科凌虫控</td>
+    </tr>
+  </tbody>
+</table>
+<p>798 rows × 3 columns</p>
+</div>
+<pre><code class="language-python">ansu['交易指数'].sum()
+</code></pre>
+<pre><code>958694
+</code></pre>
+<pre><code class="language-python">ansu_top10['交易指数']
+</code></pre>
+<pre><code>0      119751
+206    104136
+1       86389
+210     83819
+207     82687
+208     68529
+2       62653
+211     55229
+213     50425
+5       34921
+Name: 交易指数, dtype: int64
+</code></pre>
+<pre><code class="language-python">def test_func(x):
+    rate = ((x)*(ansu_top10['交易指数'].sum()))/(ansu['交易指数'].sum())
+    return f'{np.round(rate,2)}%'
+</code></pre>
+<pre><code class="language-python">ansu = flow_data.loc[flow_data.brank == '安速家居']
+ansu_top10 = ansu.sort_values('交易指数', ascending=False)[:10]
+# plt.pie(x=ansu_top10['交易指数'],autopct='%.2f%%',colors=sns.color_palette('husl'))
+plt.pie(x=ansu_top10['交易指数'],autopct=test_func,colors=sns.color_palette('husl'))
+plt.axis('equal')
+plt.title('安速家居')
+plt.show()
+</code></pre>
+<p>​<br>
+<img src="output_184_0.png" alt="png" loading="lazy"><br>
+​</p>
+<pre><code class="language-python">ansu_top10['流量来源'].values
+</code></pre>
+<pre><code>array(['淘内免费', '自主访问', '手淘搜索', '付费流量', '购物车', '我的淘宝', '淘内免费其他', '直通车',
+       '品销宝-搜索产品', '猫客搜索'], dtype=object)
+</code></pre>
+<pre><code class="language-python">plt.figure(figsize=(12, 4))
+loc = 1
+for brank in flow_data.brank.unique():
+    plt.subplot(1,3,loc)
+    loc += 1
+    brank_data = flow_data.loc[flow_data.brank == brank]
+    brank_top10 = ansu.sort_values('交易指数', ascending=False)[:10]
+    
+    def test_func(x):
+        # x就是每个扇形区的占比
+        rate = ((x)*(brank_top10['交易指数'].sum()))/(brank_data['交易指数'].sum())
+        return f'{np.round(rate,2)}%'
+    
+    plt.pie(x=brank_top10['交易指数'], autopct=test_func, 
+            colors=sns.color_palette('husl'), labels=brank_top10['流量来源'].values)
+    plt.axis('equal')
+    plt.title(brank)
+plt.show()
+</code></pre>
+<p>​<br>
+<img src="output_186_0.png" alt="png" loading="lazy"><br>
+​</p>
+<h2 id="舆情分析">舆情分析</h2>
+<pre><code class="language-python">root = 'data/竞争数据/评论舆情数据/'
+
+comment_df = pd.DataFrame()
+for file in os.listdir(root):
+    file_path = os.path.join(root, file)
+    df = pd.read_excel(file_path, sheet_name='初步筛选')
+    comment_df = pd.concat((comment_df, df), sort=False, ignore_index=True)
+</code></pre>
+<pre><code class="language-python">comment_data = comment_df[['产品名称', '评论']].copy()
+</code></pre>
+<pre><code class="language-python">brank_map = {
+    '日本安速小强恢恢蟑螂屋纸盒子捕捉器药灭杀强力家用贴克星全窝端':'安速', 
+    '德国拜耳拜灭士蟑螂药一窝端杀蟑胶饵灭蟑螂屋无毒克星家用全窝端':'拜耳',
+    '蟑螂药一窝端蟑螂屋胶饵灭蟑螂无毒厨房家用强力杀蟑螂克星全窝端':'科凌'
+}
+</code></pre>
+<pre><code class="language-python">comment_data['产品名称'].unique()
+</code></pre>
+<pre><code>array(['日本安速小强恢恢蟑螂屋纸盒子捕捉器药灭杀强力家用贴克星全窝端', '德国拜耳拜灭士蟑螂药一窝端杀蟑胶饵灭蟑螂屋无毒克星家用全窝端',
+       '蟑螂药一窝端蟑螂屋胶饵灭蟑螂无毒厨房家用强力杀蟑螂克星全窝端'], dtype=object)
+</code></pre>
+<pre><code class="language-python">comment_data['产品名称'] = comment_data['产品名称'].map(brank_map)
+</code></pre>
+<pre><code class="language-python">comment_data
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>产品名称</th>
+      <th>评论</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>安速</td>
+      <td>真没想到家里竟有这么多，昨晚上放的，今天早起都还在动，沙发底下，床底下，厨房几乎都是十几二十...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>安速</td>
+      <td>效果还不错，每个盒子里都有蟑螂，感觉还不错，之前买过别的牌子，蟑螂都不怎么往里进，这次比以前...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>安速</td>
+      <td>物流速度快，蟑螂基本上没有了，以前天天看到蟑螂到处爬，放了一个礼拜效果不错，放上去蟑螂自己就...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>安速</td>
+      <td>家里蟑螂太多了，用这个实在很好，不怕污染，一次放上几个，很有效果，密密麻麻，成就感十足。过瘾...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>安速</td>
+      <td>物流很快，晚上下单，隔天就到了。东西非常非常非常非常好用，我们一家都满意得不能再满意啦，屋子...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>3864</th>
+      <td>科凌</td>
+      <td>这个太好用了，我用来才来评价的，又来拍两盒，马上用马上见效</td>
+    </tr>
+    <tr>
+      <th>3865</th>
+      <td>科凌</td>
+      <td>刚用的第一个星期有效果，过了之后又看到蟑螂了</td>
+    </tr>
+    <tr>
+      <th>3866</th>
+      <td>科凌</td>
+      <td>比实体店划算多了</td>
+    </tr>
+    <tr>
+      <th>3867</th>
+      <td>科凌</td>
+      <td>物流很快，很划算，还没用，等用完了评效果</td>
+    </tr>
+    <tr>
+      <th>3868</th>
+      <td>科凌</td>
+      <td>谢谢您店家</td>
+    </tr>
+  </tbody>
+</table>
+<p>3869 rows × 2 columns</p>
+</div>
+<h3 id="加载停用词">加载停用词</h3>
+<pre><code class="language-python">stop_words = pd.read_table('data/百度停用词表.txt', header=None)[0].values
+</code></pre>
+<h3 id="品牌数据提取">品牌数据提取</h3>
+<pre><code class="language-python">import wordcloud
+import jieba
+from sklearn.feature_extraction.text import CountVectorizer
+
+
+# 封装展示一个品牌数据的方法
+def show_brank_words(brank_name):
+    # 品牌数据提取
+    ansu = comment_data.loc[comment_data['产品名称'] == brank_name, '评论']
+    comment = ' '.join(ansu.values)
+
+#     ## 计算出词的个数
+    comment_words = &quot;&quot;
+    for word in jieba.cut(comment):
+        if word not in stop_words:
+            comment_words = comment_words + ' ' + word
+
+
+    cv = CountVectorizer()
+    matrix = cv.fit_transform([comment_words])
+
+    words = cv.get_feature_names()
+    count = matrix.toarray()[0]
+    words_count = pd.Series(data=count, index=words)
+    words_top200 = words_count.sort_values(ascending=False)[:200]
+
+
+
+    plt.figure(figsize=(12, 8))
+    wc_image = wordcloud.WordCloud(font_path='data/SimHei.ttf',width=800, height=400,background_color='white',
+                                   colormap=plt.cm.summer)
+
+    wc_image.generate_from_frequencies(words_top200)
+    
+    plt.imshow(wc_image)
+    plt.title(brank_name)
+    plt.show
+</code></pre>
+<pre><code class="language-python">for brank_name in comment_data['产品名称'].unique():
+    show_brank_words(brank_name)
+</code></pre>
+<p>​<br>
+<img src="output_198_0.png" alt="png" loading="lazy"><br>
+​</p>
+<figure data-type="image" tabindex="12"><img src="output_198_1.png" alt="png" loading="lazy"></figure>
+<figure data-type="image" tabindex="13"><img src="output_198_2.png" alt="png" loading="lazy"></figure>
+<pre><code class="language-python">
+</code></pre>
 
                         </div>
                         
@@ -1181,6 +4438,26 @@ Name: 电蚊香套装, dtype: float64
 <li><a href="#322%E8%AE%A1%E7%AE%97%E4%B8%89%E5%B9%B4%E7%9A%84%E5%A2%9E%E9%95%BF%E7%8E%87">3.2.2计算三年的增长率</a></li>
 </ul>
 </li>
+<li><a href="#%E7%81%AD%E9%BC%A0%E5%B8%82%E5%9C%BA%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E5%88%86%E6%9E%90">灭鼠市场的进一步分析</a>
+<ul>
+<li><a href="#hhi%E6%8C%87%E6%A0%87%E5%9E%84%E6%96%AD%E8%AF%84%E4%BC%B0">HHI指标（垄断评估）</a></li>
+<li><a href="#%E7%81%AD%E9%BC%A0%E6%9D%80%E8%99%AB%E5%B8%82%E5%9C%BA%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E5%88%86%E6%9E%90">灭鼠杀虫市场的进一步分析</a></li>
+<li><a href="#%E7%BB%A7%E7%BB%AD%E6%8C%96%E6%8E%98%E5%85%B6%E4%BB%96%E5%B1%9E%E6%80%A7">继续挖掘其他属性</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90">竞品分析</a>
+<ul>
+<li><a href="#bcg%E7%9F%A9%E9%98%B5-%E6%9F%A5%E7%9C%8B%E4%BA%A7%E5%93%81%E7%BB%93%E6%9E%84%E6%98%AF%E5%90%A6%E5%81%A5%E5%BA%B7">BCG矩阵 查看产品结构是否健康</a></li>
+<li><a href="#%E5%B9%B3%E5%9D%87%E5%A2%9E%E9%95%BF%E7%8E%87%E5%85%AC%E5%BC%8F">平均增长率公式</a></li>
+</ul>
+</li>
+<li><a href="#%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90">流量分析</a></li>
+<li><a href="#%E8%88%86%E6%83%85%E5%88%86%E6%9E%90">舆情分析</a>
+<ul>
+<li><a href="#%E5%8A%A0%E8%BD%BD%E5%81%9C%E7%94%A8%E8%AF%8D">加载停用词</a></li>
+<li><a href="#%E5%93%81%E7%89%8C%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96">品牌数据提取</a></li>
 </ul>
 </li>
 </ul>
@@ -1216,8 +4493,8 @@ Name: 电蚊香套装, dtype: float64
                         <i class="post-share"></i>
                         <span>&#x5206;&#x4EAB;:</span>
                                                                     <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://416426.github.io/qu-chong-shi-chang-dian-shang-fen-xi-an-li/"><i class="fa fa-qrcode"></i></a>
-                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://416426.github.io/qu-chong-shi-chang-dian-shang-fen-xi-an-li/&sharesource=qzone&title=驱虫市场电商分析案例👻&pics=https://416426.github.io/images/avatar.png?v=1636850382030&summary="><i class="fa fa-qq"></i></a>
-                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://416426.github.io/qu-chong-shi-chang-dian-shang-fen-xi-an-li/&sharesource=weibo&title=驱虫市场电商分析案例👻 + " - " + &pic="https://416426.github.io/images/avatar.png?v=1636850382030 "><i class="fa fa-weibo "></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://416426.github.io/qu-chong-shi-chang-dian-shang-fen-xi-an-li/&sharesource=qzone&title=驱虫市场电商分析案例👻&pics=https://416426.github.io/images/avatar.png?v=1650931755928&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://416426.github.io/qu-chong-shi-chang-dian-shang-fen-xi-an-li/&sharesource=weibo&title=驱虫市场电商分析案例👻 + " - " + &pic="https://416426.github.io/images/avatar.png?v=1650931755928 "><i class="fa fa-weibo "></i></a>
 
                                                                     </span>
                                                                     
@@ -1409,7 +4686,7 @@ siteTime()
                     CheckVersion();
                     
                     var newDate = new Date();
-                    newDate.setTime(1636850382030);
+                    newDate.setTime(1650931755928);
                     console.log(" Blog Update Time: " + newDate.toLocaleDateString());
                     console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
                 </script>
