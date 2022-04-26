@@ -94,7 +94,7 @@
                         <input id="switch_default" type="checkbox" class="switch_default">
                         <label for="switch_default" class="toggleBtn"></label>
             </div>
-            <form id="gridea-search-form" data-update="1650931755928" action="/search/index.html">
+            <form id="gridea-search-form" data-update="1650933368051" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
             </form>
         </div>
@@ -113,7 +113,7 @@
                         <!--zh-->
                         <a id="mobile-toggle-theme-zh" class="a zh">&nbsp;&#x6697;&#x9ED1;</a>
                     </div>
-                    <form id="gridea-search-form" data-update="1650931755928" action="/search/index.html">
+                    <form id="gridea-search-form" data-update="1650933368051" action="/search/index.html">
                         <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
                     </form>
                     <!--en-->
@@ -231,9 +231,9 @@
                                         </a>
                                         <span class="post-time">&#x65E5;&#x671F;: <a href="#">2021-09-14</a></span>
                                         <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
-                                    href="#">72.6
+                                    href="#">72.7
                                     &#x5206;&#x949F;</a></span>
-                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">16826</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">16846</a></span>
                                         
                                             <span class="post-category">&#x5206;&#x7C7B;:
                                 
@@ -1144,7 +1144,7 @@ Name: 电蚊香套装, dtype: float64
 不论是销售额占比、销售增长率都具备明显产品的潜质</p>
 <p>另外蚊香液市场也具备相应的增长潜质，但是稍逊于灭鼠杀虫市场</p>
 <p>市场机会点可以从这两个子类市场中查找</p>
-<h3 id="灭鼠市场的进一步分析">灭鼠市场的进一步分析</h3>
+<h3 id="33灭鼠市场的进一步分析">3.3灭鼠市场的进一步分析</h3>
 <p>增长率高</p>
 <p>竞争度低</p>
 <p>竞品市场的市场占有率</p>
@@ -1168,10 +1168,9 @@ plt.ylabel('竞争度')
 </code></pre>
 <pre><code>Text(0, 0.5, '竞争度')
 </code></pre>
-<p>​<br>
-<img src="" alt="" loading="lazy"><br>
+<p>​    <img src="https://416426.github.io/post-images/output_77_1.png" alt="" loading="lazy"><br>
 ​</p>
-<h4 id="hhi指标垄断评估">HHI指标（垄断评估）</h4>
+<h4 id="331hhi指标垄断评估">3.3.1HHI指标（垄断评估）</h4>
 <pre><code class="language-python">top100 = pd.read_excel('./data/驱虫剂市场/top100品牌数据.xlsx')
 top100
 </code></pre>
@@ -1613,7 +1612,7 @@ warnings.filterwarnings('ignore')
 <pre><code>&lt;AxesSubplot:xlabel='售价', ylabel='Density'&gt;
 </code></pre>
 <p>​<br>
-<img src="output_95_1.png" alt="png" loading="lazy"><br>
+<img src="https://416426.github.io/post-images/output_95_1.png" alt="png" loading="lazy"><br>
 ​</p>
 <pre><code class="language-python">bins = np.arange(0, 350, 50)
 bins = np.concatenate((bins, [float('inf')]))
@@ -2156,7 +2155,7 @@ plt.legend()
 <pre><code>&lt;matplotlib.legend.Legend at 0x15b011d2700&gt;
 </code></pre>
 <p>​<br>
-<img src="output_106_1.png" alt="png" loading="lazy"><br>
+<img src="https://416426.github.io/post-images/output_106_1.png" alt="png" loading="lazy"><br>
 ​</p>
 <p>200-250价格区间时相对竞争度最低的，所以可以作为高端市场的机会点</p>
 <p>0-50市场份额高，相对竞争度也高， 但是由于市场份额很高，所以可以进一步的挖掘更细致价格区间</p>
@@ -2175,11 +2174,11 @@ price_table_50 = create_price_table(bins=bins, mouse_data=mouse_data)
 <pre><code class="language-python">show_compatitive(price_table_50)
 </code></pre>
 <p>​<br>
-<img src="output_110_0.png" alt="png" loading="lazy"><br>
+<img src="https://416426.github.io/post-images/output_110_0.png" alt="png" loading="lazy"><br>
 ​</p>
 <p>10-20元的细分市场，市场份额很高，相对竞争度很低</p>
 <p>20-30元的区间，仅次于10-20元的市场，也可以考虑</p>
-<h4 id="灭鼠杀虫市场的进一步分析">灭鼠杀虫市场的进一步分析</h4>
+<h4 id="332-灭鼠杀虫市场的进一步分析">3.3.2 灭鼠杀虫市场的进一步分析</h4>
 <p>查看哪个2级类目有更高的市场占有率和增长率</p>
 <pre><code class="language-python">kill_mouse = kill_mouse[features].copy()
 </code></pre>
@@ -2188,10 +2187,10 @@ plt.axis('equal')
 plt.show()
 </code></pre>
 <p>​<br>
-<img src="output_114_0.png" alt="png" loading="lazy"><br>
+<img src="https://416426.github.io/post-images/output_114_0.png" alt="png" loading="lazy"><br>
 ​</p>
 <p>除灭鼠市场外，蟑螂市场也有较高的占有率，所以可以进一步的挖掘机会点</p>
-<h4 id="继续挖掘其他属性">继续挖掘其他属性</h4>
+<h4 id="333继续挖掘其他属性">3.3.3继续挖掘其他属性</h4>
 <pre><code class="language-python">
 kill_mouse
 </code></pre>
@@ -2720,7 +2719,7 @@ type_top10
 <pre><code class="language-python">show_compatitive(type_top10)
 </code></pre>
 <p>​<br>
-<img src="output_121_0.png" alt="png" loading="lazy"><br>
+<img src="https://416426.github.io/post-images/output_121_0.png" alt="png" loading="lazy"><br>
 ​</p>
 <p>SK600 JF-807时两款相对竞争度很低的产品型号，可以进一步关注</p>
 <p>但是由于产品型号差异太大，500多种，所以参考价值较低，可以进一步和市场人员沟通</p>
@@ -2791,7 +2790,7 @@ city_moust_data.index = np.arange(city_moust_data.shape[0])
 <pre><code class="language-python">show_compatitive(city_info_table)
 </code></pre>
 <p>​<br>
-<img src="output_138_0.png" alt="png" loading="lazy"><br>
+<img src="https://416426.github.io/post-images/output_138_0.png" alt="png" loading="lazy"><br>
 ​</p>
 <p>上海、四川、广东、海南都是竞争度较低的省份，可以扩大规模</p>
 <pre><code class="language-python">physical_form_table = create_compatitive_table_by(mouse_data, '物理形态')
@@ -2982,11 +2981,11 @@ city_moust_data.index = np.arange(city_moust_data.shape[0])
 <pre><code class="language-python">show_compatitive(physical_form_table)
 </code></pre>
 <p>​<br>
-<img src="output_142_0.png" alt="png" loading="lazy"><br>
+<img src="https://416426.github.io/post-images/output_142_0.png" alt="png" loading="lazy"><br>
 ​</p>
 <p>8波段驱鼠器、胶水相对竞争度较低， 可以作为机会增长点做进一步扩大</p>
 <p>其他形式、其他子类市场，都可以做类似的筛选，再总结即可</p>
-<h2 id="竞品分析">竞品分析</h2>
+<h2 id="4竞品分析">4.竞品分析</h2>
 <pre><code class="language-python">root_path = './data/竞争数据/商品销售数据/'
 
 sales_data = pd.DataFrame()
@@ -3218,7 +3217,7 @@ plt.suptitle('主要竞品的销售额占比分析')
 <pre><code>Text(0.5, 0.98, '主要竞品的销售额占比分析')
 </code></pre>
 <p>​<br>
-<img src="output_150_1.png" alt="png" loading="lazy"><br>
+<img src="https://416426.github.io/post-images/output_150_1.png" alt="png" loading="lazy"><br>
 ​</p>
 <pre><code class="language-python">category_sales1 = pd.pivot_table(data=sales_data_features, 
                index='店铺名称', columns='类目', 
@@ -3234,10 +3233,10 @@ plt.suptitle('主要竞品的销售量占比分析')
 <pre><code>Text(0.5, 0.98, '主要竞品的销售量占比分析')
 </code></pre>
 <p>​<br>
-<img src="output_151_1.png" alt="png" loading="lazy"><br>
+<img src="https://416426.github.io/post-images/output_151_1.png" alt="png" loading="lazy"><br>
 ​</p>
 <p>三家竞品的产品组合基本一致</p>
-<h3 id="bcg矩阵-查看产品结构是否健康">BCG矩阵 查看产品结构是否健康</h3>
+<h3 id="41-bcg矩阵-查看产品结构是否健康">4.1 BCG矩阵 查看产品结构是否健康</h3>
 <p>以拜尔官方旗舰店为例： 分析BCG结构</p>
 <pre><code class="language-python">baier = pd.read_excel('data/竞争数据/商品交易数据/拜耳全店商品交易数据.xlsx')
 baier
@@ -3510,10 +3509,9 @@ sales_pct
 预售德国拜耳进口蟑螂药进口蚂蚁药组合装5g+12g              0.001057
 Name: 交易金额, dtype: float64
 </code></pre>
-<h3 id="平均增长率公式">平均增长率公式</h3>
-<figure data-type="image" tabindex="9"><img src="attachment:image.png" alt="image.png" loading="lazy"></figure>
+<h3 id="42-平均增长率公式">4.2 平均增长率公式</h3>
 <p>n 是期数</p>
-<p>ai 第i期的增长幅度</p>
+<p>ai 第i期的增长幅</p>
 <pre><code class="language-python">baier.sort_values(['商品','交易增长幅度'])
 </code></pre>
 <div>
@@ -4032,10 +4030,10 @@ warnings.filterwarnings('ignore')
     plt.show()
 </code></pre>
 <p>​<br>
-<img src="output_172_0.png" alt="png" loading="lazy"><br>
+<img src="https://416426.github.io/post-images/output_172_0.png" alt="png" loading="lazy"><br>
 ​</p>
-<figure data-type="image" tabindex="10"><img src="output_172_1.png" alt="png" loading="lazy"></figure>
-<figure data-type="image" tabindex="11"><img src="output_172_2.png" alt="png" loading="lazy"></figure>
+<figure data-type="image" tabindex="9"><img src="https://416426.github.io/post-images/output_172_1.png" alt="png" loading="lazy"></figure>
+<figure data-type="image" tabindex="10"><img src="https://416426.github.io/post-images/output_172_2.png" alt="png" loading="lazy"></figure>
 <pre><code class="language-python">result.loc[result['平均增长率'] &lt; 25].plot(kind='scatter', x='交易额占比', y='平均增长率')
 </code></pre>
 <pre><code>*c* argument looks like a single numeric RGB or RGBA sequence, which should be avoided as value-mapping will have precedence in case its length matches with *x* &amp; *y*.  Please use the *color* keyword-argument or provide a 2-D array with a single row if you intend to specify the same RGB or RGBA value for all points.
@@ -4047,7 +4045,7 @@ warnings.filterwarnings('ignore')
 &lt;AxesSubplot:xlabel='交易额占比', ylabel='平均增长率'&gt;
 </code></pre>
 <p>​<br>
-<img src="output_173_2.png" alt="png" loading="lazy"><br>
+<img src="https://416426.github.io/post-images/output_173_2.png" alt="png" loading="lazy"><br>
 ​</p>
 <pre><code class="language-python">result['交易额占比'].median()*10
 </code></pre>
@@ -4064,16 +4062,16 @@ plt.plot([result['交易额占比'].median()*10]*100, np.linspace(-5, 8, 100))
 <pre><code>[&lt;matplotlib.lines.Line2D at 0x15b06bbea90&gt;]
 </code></pre>
 <p>​<br>
-<img src="output_175_1.png" alt="png" loading="lazy"><br>
+<img src="https://416426.github.io/post-images/output_175_1.png" alt="png" loading="lazy"><br>
 ​</p>
 <pre><code class="language-python">plt.scatter(result['交易额占比'], result['平均增长率'])
 </code></pre>
 <pre><code>&lt;matplotlib.collections.PathCollection at 0x15b055b0b50&gt;
 </code></pre>
 <p>​<br>
-<img src="output_176_1.png" alt="png" loading="lazy"><br>
+<img src="https://416426.github.io/post-images/output_176_1.png" alt="png" loading="lazy"><br>
 ​</p>
-<h2 id="流量分析">流量分析</h2>
+<h2 id="5流量分析">5.流量分析</h2>
 <pre><code class="language-python">flow_data = pd.DataFrame()
 
 for file in os.listdir('data/竞争数据/流量渠道数据'):
@@ -4212,7 +4210,7 @@ plt.title('安速家居')
 plt.show()
 </code></pre>
 <p>​<br>
-<img src="output_184_0.png" alt="png" loading="lazy"><br>
+<img src="https://416426.github.io/post-images/output_184_0.png" alt="png" loading="lazy"><br>
 ​</p>
 <pre><code class="language-python">ansu_top10['流量来源'].values
 </code></pre>
@@ -4239,9 +4237,9 @@ for brank in flow_data.brank.unique():
 plt.show()
 </code></pre>
 <p>​<br>
-<img src="output_186_0.png" alt="png" loading="lazy"><br>
+<img src="https://416426.github.io/post-images/output_186_0.png" alt="png" loading="lazy"><br>
 ​</p>
-<h2 id="舆情分析">舆情分析</h2>
+<h2 id="6舆情分析">6.舆情分析</h2>
 <pre><code class="language-python">root = 'data/竞争数据/评论舆情数据/'
 
 comment_df = pd.DataFrame()
@@ -4349,10 +4347,10 @@ for file in os.listdir(root):
 </table>
 <p>3869 rows × 2 columns</p>
 </div>
-<h3 id="加载停用词">加载停用词</h3>
+<h3 id="61加载停用词">6.1加载停用词</h3>
 <pre><code class="language-python">stop_words = pd.read_table('data/百度停用词表.txt', header=None)[0].values
 </code></pre>
-<h3 id="品牌数据提取">品牌数据提取</h3>
+<h3 id="62品牌数据提取">6.2品牌数据提取</h3>
 <pre><code class="language-python">import wordcloud
 import jieba
 from sklearn.feature_extraction.text import CountVectorizer
@@ -4395,10 +4393,10 @@ def show_brank_words(brank_name):
     show_brank_words(brank_name)
 </code></pre>
 <p>​<br>
-<img src="output_198_0.png" alt="png" loading="lazy"><br>
+<img src="https://416426.github.io/post-images/output_198_0.png" alt="png" loading="lazy"><br>
 ​</p>
-<figure data-type="image" tabindex="12"><img src="output_198_1.png" alt="png" loading="lazy"></figure>
-<figure data-type="image" tabindex="13"><img src="output_198_2.png" alt="png" loading="lazy"></figure>
+<figure data-type="image" tabindex="11"><img src="https://416426.github.io/post-images/output_198_1.png" alt="png" loading="lazy"></figure>
+<figure data-type="image" tabindex="12"><img src="https://416426.github.io/post-images/output_198_2.png" alt="png" loading="lazy"></figure>
 <pre><code class="language-python">
 </code></pre>
 
@@ -4438,26 +4436,26 @@ def show_brank_words(brank_name):
 <li><a href="#322%E8%AE%A1%E7%AE%97%E4%B8%89%E5%B9%B4%E7%9A%84%E5%A2%9E%E9%95%BF%E7%8E%87">3.2.2计算三年的增长率</a></li>
 </ul>
 </li>
-<li><a href="#%E7%81%AD%E9%BC%A0%E5%B8%82%E5%9C%BA%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E5%88%86%E6%9E%90">灭鼠市场的进一步分析</a>
+<li><a href="#33%E7%81%AD%E9%BC%A0%E5%B8%82%E5%9C%BA%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E5%88%86%E6%9E%90">3.3灭鼠市场的进一步分析</a>
 <ul>
-<li><a href="#hhi%E6%8C%87%E6%A0%87%E5%9E%84%E6%96%AD%E8%AF%84%E4%BC%B0">HHI指标（垄断评估）</a></li>
-<li><a href="#%E7%81%AD%E9%BC%A0%E6%9D%80%E8%99%AB%E5%B8%82%E5%9C%BA%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E5%88%86%E6%9E%90">灭鼠杀虫市场的进一步分析</a></li>
-<li><a href="#%E7%BB%A7%E7%BB%AD%E6%8C%96%E6%8E%98%E5%85%B6%E4%BB%96%E5%B1%9E%E6%80%A7">继续挖掘其他属性</a></li>
+<li><a href="#331hhi%E6%8C%87%E6%A0%87%E5%9E%84%E6%96%AD%E8%AF%84%E4%BC%B0">3.3.1HHI指标（垄断评估）</a></li>
+<li><a href="#332-%E7%81%AD%E9%BC%A0%E6%9D%80%E8%99%AB%E5%B8%82%E5%9C%BA%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E5%88%86%E6%9E%90">3.3.2 灭鼠杀虫市场的进一步分析</a></li>
+<li><a href="#333%E7%BB%A7%E7%BB%AD%E6%8C%96%E6%8E%98%E5%85%B6%E4%BB%96%E5%B1%9E%E6%80%A7">3.3.3继续挖掘其他属性</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90">竞品分析</a>
+<li><a href="#4%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90">4.竞品分析</a>
 <ul>
-<li><a href="#bcg%E7%9F%A9%E9%98%B5-%E6%9F%A5%E7%9C%8B%E4%BA%A7%E5%93%81%E7%BB%93%E6%9E%84%E6%98%AF%E5%90%A6%E5%81%A5%E5%BA%B7">BCG矩阵 查看产品结构是否健康</a></li>
-<li><a href="#%E5%B9%B3%E5%9D%87%E5%A2%9E%E9%95%BF%E7%8E%87%E5%85%AC%E5%BC%8F">平均增长率公式</a></li>
+<li><a href="#41-bcg%E7%9F%A9%E9%98%B5-%E6%9F%A5%E7%9C%8B%E4%BA%A7%E5%93%81%E7%BB%93%E6%9E%84%E6%98%AF%E5%90%A6%E5%81%A5%E5%BA%B7">4.1 BCG矩阵 查看产品结构是否健康</a></li>
+<li><a href="#42-%E5%B9%B3%E5%9D%87%E5%A2%9E%E9%95%BF%E7%8E%87%E5%85%AC%E5%BC%8F">4.2 平均增长率公式</a></li>
 </ul>
 </li>
-<li><a href="#%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90">流量分析</a></li>
-<li><a href="#%E8%88%86%E6%83%85%E5%88%86%E6%9E%90">舆情分析</a>
+<li><a href="#5%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90">5.流量分析</a></li>
+<li><a href="#6%E8%88%86%E6%83%85%E5%88%86%E6%9E%90">6.舆情分析</a>
 <ul>
-<li><a href="#%E5%8A%A0%E8%BD%BD%E5%81%9C%E7%94%A8%E8%AF%8D">加载停用词</a></li>
-<li><a href="#%E5%93%81%E7%89%8C%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96">品牌数据提取</a></li>
+<li><a href="#61%E5%8A%A0%E8%BD%BD%E5%81%9C%E7%94%A8%E8%AF%8D">6.1加载停用词</a></li>
+<li><a href="#62%E5%93%81%E7%89%8C%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96">6.2品牌数据提取</a></li>
 </ul>
 </li>
 </ul>
@@ -4493,8 +4491,8 @@ def show_brank_words(brank_name):
                         <i class="post-share"></i>
                         <span>&#x5206;&#x4EAB;:</span>
                                                                     <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://416426.github.io/qu-chong-shi-chang-dian-shang-fen-xi-an-li/"><i class="fa fa-qrcode"></i></a>
-                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://416426.github.io/qu-chong-shi-chang-dian-shang-fen-xi-an-li/&sharesource=qzone&title=驱虫市场电商分析案例👻&pics=https://416426.github.io/images/avatar.png?v=1650931755928&summary="><i class="fa fa-qq"></i></a>
-                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://416426.github.io/qu-chong-shi-chang-dian-shang-fen-xi-an-li/&sharesource=weibo&title=驱虫市场电商分析案例👻 + " - " + &pic="https://416426.github.io/images/avatar.png?v=1650931755928 "><i class="fa fa-weibo "></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://416426.github.io/qu-chong-shi-chang-dian-shang-fen-xi-an-li/&sharesource=qzone&title=驱虫市场电商分析案例👻&pics=https://416426.github.io/images/avatar.png?v=1650933368051&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://416426.github.io/qu-chong-shi-chang-dian-shang-fen-xi-an-li/&sharesource=weibo&title=驱虫市场电商分析案例👻 + " - " + &pic="https://416426.github.io/images/avatar.png?v=1650933368051 "><i class="fa fa-weibo "></i></a>
 
                                                                     </span>
                                                                     
@@ -4686,7 +4684,7 @@ siteTime()
                     CheckVersion();
                     
                     var newDate = new Date();
-                    newDate.setTime(1650931755928);
+                    newDate.setTime(1650933368051);
                     console.log(" Blog Update Time: " + newDate.toLocaleDateString());
                     console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
                 </script>
